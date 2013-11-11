@@ -9,7 +9,7 @@ var role = {
 	direction:0,
     way:1
 }
-
+//test
 function move_role () {
 	if (role.direction == 1) {
 		role.x=role.x-unit;  
