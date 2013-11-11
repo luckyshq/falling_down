@@ -1,0 +1,16 @@
+{
+    "name": "failingdown8",
+    "version": "0.1.0",
+    "version_code": "1",
+    "type": "web",
+    "package": "com.yunos.cloudapp.failingdown8",
+    "minimum_runtime_version": "0.1.0",
+    "description": "demo",
+    "developer": {
+        "name": "yunos",
+        "url": "http://www.yunos.com"
+     },
+    "launch_url": "/faling.html",
+    "fullscreen": "true",
+    "platform": "phone"
+}
