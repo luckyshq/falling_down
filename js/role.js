@@ -1,4 +1,6 @@
-//role
+//role 
+
+//To add shield attribute and harmless attribute......
 
 var role = {
 	x:170,
