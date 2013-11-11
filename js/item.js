@@ -7,7 +7,7 @@ var item = {
     status:0,
     speed:10
 }
-
+//test
 function draw_item () {
     
     
