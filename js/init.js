@@ -18,6 +18,9 @@ var bound = {
 	bottom:box.y+box.height-role.height
 }
 
+var fallingdown = {
+    barrier: []
+};
 var unit = 20;
 
 function draw_text () {
@@ -29,13 +32,17 @@ function draw_text () {
 
 
 function gameloop(time){
-    if ((barrier.y <= role.y + role.height && barrier.y+barrier.height>role.y)) {
-        if (barrier.x <= role.x+role.width&&barrier.x+barrier.width>role.x) {
-            barrier.y=box.height;
+     var hh = fallingdown.barrier.length;
+    for(var nn = 0; nn<hh; nn++){
+    if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
+        if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
+            fallingdown.barrier.splice(nn,1);
+            hh--;
             point = 0;
         };
         
     };
+}
     point = point+12;
     draw_role();
     draw_barrier();
@@ -45,7 +52,9 @@ function gameloop(time){
 
 $(function init() {
 	canvas=document.getElementById("man");  
-    ctx=canvas.getContext('2d');  
+    ctx=canvas.getContext('2d'); 
+     createBarrier();
+    setInterval(createBarrier,2000) ; 
     gameloop(Date.now);
   
 });
