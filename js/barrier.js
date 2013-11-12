@@ -22,13 +22,15 @@ function createBarrier(){
 
 function draw_barrier () {
     ctx.fillStyle = "#007FFF";
-    var hh = fallingdown.barrier.length;
-    for(var nn = 0; nn<hh; nn++){
+    var nn = 0; 
+    while(nn<fallingdown.barrier.length)
+    {
        ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
-        fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed;
+       fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed;
         if (fallingdown.barrier[nn].y < 0) {
             fallingdown.barrier.splice(nn,1);
-            hh--;
-    };
+        }else{
+            nn++;
+        }
     }
 }
