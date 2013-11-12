@@ -26,9 +26,7 @@ function draw_barrier () {
     var nn = 0; 
     while(nn<fallingdown.barrier.length)
     {
-<<<<<<< HEAD
-       ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
-=======
+
        //ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
        
        ctx.drawImage(barrierImg,
@@ -44,7 +42,6 @@ function draw_barrier () {
         fallingdown.barrier[nn].height);
        fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%9;
 
->>>>>>> several changes
        fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed;
         if (fallingdown.barrier[nn].y < 0) {
             fallingdown.barrier.splice(nn,1);

@@ -35,51 +35,26 @@ function draw_text () {
 
 
 function gameloop(time){
-    var nn = 0; 
-    while(nn<fallingdown.barrier.length)
-    {
+     var hh = fallingdown.barrier.length;
+    for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
         if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
             fallingdown.barrier.splice(nn,1);
+            hh--;
             point = 0;
-<<<<<<< HEAD
-        }else{
-          nn++;
-        }
-    }else{
-          nn++;
-        }
-  }
-=======
         };
     };
 }
->>>>>>> several changes
     point = point+12;
 
     draw_role();
 
     draw_barrier();
     draw_text();
-    _canvasContext.drawImage(_canvasBuffer, 0, 0);
     var h=window.requestAnimationFrame(gameloop);
 }
 
-<<<<<<< HEAD
-$(function init() {
-	_canvas = document.getElementById('man');
-      _canvasContext = _canvas.getContext('2d');
-      _canvasBuffer = document.createElement('canvas');
-      _canvasBuffer.width = _canvas.width;
-      _canvasBuffer.height = _canvas.height;
-      ctx = _canvasBuffer.getContext('2d');
-
-     createBarrier();
-    setInterval(createBarrier,2000) ; 
-=======
-
 function initGame () {
->>>>>>> several changes
     gameloop(Date.now);
 }
     
@@ -97,7 +72,6 @@ $(function init() {
 
     createBarrier();
     setTimeout(temppp,10000);
-
 
     img.src="images/role.png";
     barrierImg.src="images/barrier1.png";
