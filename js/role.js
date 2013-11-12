@@ -3,10 +3,10 @@
 //To add shield attribute and harmless attribute......
 
 var role = {
-	x:170,
-	y:300,
-	width:32,
-	height:48,
+	x:135,
+	y:250,
+	width:72,
+	height:82,
 	status:0,
 	direction:0,
     way:1
@@ -52,16 +52,26 @@ function draw_role(){
     ctx.beginPath();  
     ctx.strokeRect(box.x,box.y,box.width,box.height); 
        
-    var img=new Image();  
-    img.src="images/man.png"; 
+    // var img=new Image();  
+    // img.src="images/man.png"; 
+    // if (role.direction!=0) {
+    // 	move_role();  	
+    // }
+
+    // ctx.drawImage(img,role.status*role.width,role.direction*role.height,
+    //         role.width,role.height,role.x,role.y,role.width,role.height);       
+    
+    // role.status=(role.status+1)%3; 
+
+     
     if (role.direction!=0) {
-    	move_role();  	
+        move_role();    
     }
 
-    ctx.drawImage(img,role.status*role.width,role.direction*role.height,
+    ctx.drawImage(img,role.status*role.width,0,
             role.width,role.height,role.x,role.y,role.width,role.height);       
     
-    role.status=(role.status+1)%3; 
+    role.status=(role.status+1)%9; 
 }
 
  $(document).keydown(function(e){

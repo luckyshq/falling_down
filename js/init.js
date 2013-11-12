@@ -1,6 +1,9 @@
 var canvas;  
 var ctx;
 
+var img=new Image(); 
+var barrierImg=new Image();
+
 var point=0;
 //box 
 var box = {
@@ -8,7 +11,7 @@ var box = {
 	y:0,
 	width:360,
 	height:640,
-	mid:170
+	mid:135
 }  
 
 var bound = {
@@ -39,6 +42,7 @@ function gameloop(time){
         if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
             fallingdown.barrier.splice(nn,1);
             point = 0;
+<<<<<<< HEAD
         }else{
           nn++;
         }
@@ -46,14 +50,22 @@ function gameloop(time){
           nn++;
         }
   }
+=======
+        };
+    };
+}
+>>>>>>> several changes
     point = point+12;
+
     draw_role();
+
     draw_barrier();
     draw_text();
     _canvasContext.drawImage(_canvasBuffer, 0, 0);
     var h=window.requestAnimationFrame(gameloop);
 }
 
+<<<<<<< HEAD
 $(function init() {
 	_canvas = document.getElementById('man');
       _canvasContext = _canvas.getContext('2d');
@@ -64,6 +76,47 @@ $(function init() {
 
      createBarrier();
     setInterval(createBarrier,2000) ; 
+=======
+
+function initGame () {
+>>>>>>> several changes
     gameloop(Date.now);
-  
+}
+    
+
+function temppp(){
+
+    setInterval(createBarrier,2000) ; 
+}
+
+$(function init() {
+    canvas=document.getElementById("man");  
+    ctx=canvas.getContext('2d');
+    canvasBg=document.getElementById("bg");  
+    ctxBg=canvas.getContext('2d');
+
+    createBarrier();
+    setTimeout(temppp,10000);
+
+
+    img.src="images/role.png";
+    barrierImg.src="images/barrier1.png";
+
+    $("#man").on("swipeleft",function() {
+        role.direction = 1;
+        role.way = role.way-1;
+        if (role.way<0) {
+            role.way = 0;
+        };
+    });
+    $("#man").on("swiperight",function() {
+        role.direction = 2;
+        role.way = role.way + 1;
+        if (role.way>2) {
+            role.way = 2;
+        };
+    });
+    $(".start").on("click",function() {
+        initGame();
+    });
 });
