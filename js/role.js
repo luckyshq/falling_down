@@ -5,8 +5,8 @@
 var role = {
 	x:135,
 	y:250,
-	width:72,
-	height:82,
+	width:69,
+	height:78,
 	status:0,
 	direction:0,
     way:1
@@ -71,7 +71,7 @@ function draw_role(){
     ctx.drawImage(img,role.status*role.width,0,
             role.width,role.height,role.x,role.y,role.width,role.height);       
     
-    role.status=(role.status+1)%9; 
+    role.status=(role.status+1)%3; 
 }
 
  $(document).keydown(function(e){
