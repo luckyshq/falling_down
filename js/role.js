@@ -1,6 +1,7 @@
 //role 
 
 //To add shield attribute and harmless attribute......
+// var bgy=0;
 
 var role = {
 	x:135,
@@ -40,12 +41,13 @@ function move_role () {
 function draw_role(){
 	ctx.clearRect(box.x,box.y,box.width,box.height);  
 
-    var   grd=ctx.createLinearGradient(0,0,360,640);
-      grd.addColorStop(0,'#ceefff');
-      grd.addColorStop(1,'#52bcff');
-	
-      ctx.fillStyle=grd;
-      ctx.fillRect(0,0,360,640);
+    // ctxBg.drawImage(bgImage,0,0,900,1600,0,bgy,360,640+bgy);
+    //ctxBg.drawImage(bgImage,0,0,900,1600,0,640+bgy,360,1280+bgy);
+    // bgy = bgy-1;
+    // if (bgy<-640) {
+    //     bgy=640;
+    // };
+    ctxBg.drawImage(bgImage,0,0,900,1600,0,0,360,640);
 
     ctx.lineWidth="5";  
     ctx.strokeStyle="rgb(0,0,0)";  

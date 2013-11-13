@@ -3,6 +3,7 @@ var ctx;
 
 var img=new Image(); 
 var barrierImg=new Image();
+var bgImage=new Image();
 
 var point=0;
 //box 
@@ -75,6 +76,7 @@ $(function init() {
 
     img.src="images/role.png";
     barrierImg.src="images/barrier1.png";
+    bgImage.src="images/sky.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;
