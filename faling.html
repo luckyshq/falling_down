@@ -12,6 +12,10 @@
 </head>
 
 <body>
+	
+
+<audio id="audio" src=""></audio>
+
 
 <div data-role="page" id="welcome">
     <div data-role="header">
@@ -21,6 +25,7 @@
         <a class="start" href="#game" data-role="button" data-theme="b">Start</a>
         <a class="option" href="#option" data-role="button" data-theme="b">Option</a>
     </div>
+
 </div>
 
 <div data-role="page" id="game">
@@ -48,6 +53,39 @@
     <div data-role="content">
     	<a href="#welcome" data-role="button" data-theme="b">back</a>
     </div>
+    
+    
+     <!--in order to turn in the volume-->
+    <div id="progressBar">
+    	<div id="au"><h1>VOLUME</h1></div>
+    	<input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
+    </div>
+    
+    	 
+    <script>
+    	function setVolume() {
+ 		  var volume = document.getElementById("volume");
+  		 audio.volume = volume.value;
+		}
+
+	</script>
+    
+   <style>
+    	#au{
+    		color:black;
+    		text-align:center;
+    	}
+    	#progressBar { 
+  		 border:10px solid #aaa; 
+   		color:#000000; 
+   		width:document.body.clientWidth; 
+  		 height:250px;
+		}
+		
+    </style>
+
+    
+
 </div>
 </body>
 </html>
