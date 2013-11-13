@@ -1,9 +1,9 @@
 {
-    "name": "failingdown8",
+    "name": "failingdown12",
     "version": "0.1.0",
     "version_code": "1",
     "type": "web",
-    "package": "com.yunos.cloudapp.failingdown8",
+    "package": "com.yunos.cloudapp.failingdown12",
     "minimum_runtime_version": "0.1.0",
     "description": "demo",
     "developer": {
