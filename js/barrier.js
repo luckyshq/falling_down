@@ -17,7 +17,7 @@ function createBarrier(){
         y = parseInt(Math.random()*3);
     }
     fallingdown.barrier.push(new barrier(120*x+25,640,70,70,x,2,0));
-    fallingdown.barrier.push(new barrier(120*y+25,640,70,70,y,2,0));
+    fallingdown.barrier.push(new barrier(120*y+25,640,70,70,y,4,0));
 }
 
 

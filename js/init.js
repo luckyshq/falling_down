@@ -1,6 +1,6 @@
 var canvas;  
 var ctx;
-
+var g_count = 0;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
@@ -36,6 +36,8 @@ function draw_text () {
 
 
 function gameloop(time){
+    g_count++;
+    g_count %= 200;
      var hh = fallingdown.barrier.length;
     for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
@@ -49,10 +51,13 @@ function gameloop(time){
     point = point+12;
 
     draw_role();
-
+    if(g_count == 1){
+        createBarrier();
+    }
     draw_barrier();
     draw_text();
     var h=window.requestAnimationFrame(gameloop);
+
 }
 
 function initGame () {
@@ -60,10 +65,6 @@ function initGame () {
 }
     
 
-function temppp(){
-
-    setInterval(createBarrier,2000) ; 
-}
 
 $(function init() {
     canvas=document.getElementById("man");  
@@ -72,7 +73,7 @@ $(function init() {
     ctxBg=canvas.getContext('2d');
 
     createBarrier();
-    setTimeout(temppp,10000);
+  
 
     img.src="images/role.png";
     barrierImg.src="images/barrier1.png";
