@@ -39,7 +39,7 @@ function move_role () {
 }
 
 function draw_role(){
-	ctx.clearRect(box.x,box.y,box.width,box.height);  
+	ctx.clearRect(box.x,box.y,box.width,box.height);   
 
     // ctxBg.drawImage(bgImage,0,0,900,1600,0,bgy,360,640+bgy);
     //ctxBg.drawImage(bgImage,0,0,900,1600,0,640+bgy,360,1280+bgy);
