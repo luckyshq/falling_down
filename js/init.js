@@ -1,11 +1,10 @@
 var canvas;  
 var ctx;
-var g_count = 0;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
 
-var point=0;
+
 //box 
 var box = {
 	x:0,
@@ -23,35 +22,50 @@ var bound = {
 }
 
 var fallingdown = {
-    barrier: []
+    barrier: [], //barrier array
+    g_count: 0,  //global counter ,instead of using clock
+    b_count: 0,   //use which barrier
+    point  : 0 
 };
+
 var unit = 20;
 
 function draw_text () {
     ctx.font = "26px Arial";
     ctx.textAlign = "left";
     ctx.fillStyle = "#FF0000";
-    ctx.fillText("Point:"+point,20,30);
+    ctx.fillText("Point:"+fallingdown.point,20,30);
 }
 
+function reStart(){
+    fallingdown.point = 0;
+    fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
+    fallingdown.point = 0;
+    fallingdown.g_count = 0;
+    fallingdown.b_count = 0;
+    role.x = 135;
+    role.y = 250;
+    role.status = 0;
+    role.direction = 0;
+    role.way = 1;
+}
 
 function gameloop(time){
-    g_count++;
-    g_count %= 200;
+    fallingdown.g_count++;
+    fallingdown.g_count %= 200;
      var hh = fallingdown.barrier.length;
     for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
         if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
-            fallingdown.barrier.splice(nn,1);
-            hh--;
-            point = 0;
+             reStart();
+            break;
         };
     };
 }
-    point = point+12;
+    fallingdown.point = fallingdown.point+12;
 
     draw_role();
-    if(g_count == 1){
+    if(fallingdown.g_count == 1){
         createBarrier();
     }
     draw_barrier();
