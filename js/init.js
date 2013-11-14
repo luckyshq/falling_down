@@ -52,7 +52,7 @@ function reStart(){
 
 function gameloop(time){
     fallingdown.g_count++;
-    fallingdown.g_count %= 200;
+    fallingdown.g_count %= 100;
      var hh = fallingdown.barrier.length;
     for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
@@ -86,7 +86,7 @@ $(function init() {
     canvasBg=document.getElementById("bg");  
     ctxBg=canvas.getContext('2d');
 
-    createBarrier();
+    //createBarrier();
   
 
     img.src="images/role.png";

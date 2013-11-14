@@ -1,3 +1,29 @@
+var barrierArray = 
+[[0,0],[1,4],[1,4],
+[0,0],[1,4],[1,2],
+[0,0],[1,2],[0,0],
+[0,0],[1,2],[0,0],
+[0,0],[1,2],[0,0],
+[1,2],[1,2],[1,4],
+[0,0],[0,0],[1,2],
+[0,0],[1,4],[0,0],
+[0,0],[0,0],[1,2],
+[0,0],[1,4],[1,0],
+[1,2],[0,0],[1,2],
+[0,0],[1,2],[0,0],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,4],[0,0],[1,4],
+[0,0],[1,2],[1,2],
+[1,2],[0,0],[0,0],
+[1,4],[0,0],[0,0],
+[0,0],[1,4],[1,4],
+[1,2],[0,0],[1,4]];
+
 function barrier(x,y,width,height,way,speed,status){
 
     this.x = x;
@@ -11,13 +37,18 @@ function barrier(x,y,width,height,way,speed,status){
 
 
 function createBarrier(){
-    var x = parseInt(Math.random()*3);
-    var y = parseInt(Math.random()*3);
-    while(y == x){
-        y = parseInt(Math.random()*3);
+    if(fallingdown.b_count == 24){
+        fallingdown.b_count = 0;
     }
-    fallingdown.barrier.push(new barrier(120*x+25,640,70,70,x,2,0));
-    fallingdown.barrier.push(new barrier(120*y+25,640,70,70,y,4,0));
+    for(var i = 0; i<3; i++){
+        if(barrierArray[fallingdown.b_count][0] == 0){
+            fallingdown.b_count++;
+           // continue;
+        }else{
+            fallingdown.barrier.push(new barrier(120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
+            fallingdown.b_count++;
+        }
+    }
 }
 
 
