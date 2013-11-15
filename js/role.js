@@ -9,7 +9,11 @@ var role = {
 	height:107,
 	status:0,
 	direction:0,
-    way:1
+    way:1,
+
+    sheld:1,          //1 role has a sheld
+    harmless:0,       //0 role is not harmless
+    dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 
 }
 //test
 function move_role () {

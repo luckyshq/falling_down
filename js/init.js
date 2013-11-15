@@ -25,6 +25,7 @@ var fallingdown = {
     barrier: [], //barrier array
     g_count: 0,  //global counter ,instead of using clock
     b_count: 0,   //use which barrier
+    ctrl_speed: 1,  //control the speed of every barrier
     point  : 0 
 };
 
@@ -58,7 +59,7 @@ function gameloop(time){
     for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
         if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
-             reStart();
+             //reStart();
             break;
         };
     };
@@ -71,6 +72,7 @@ function gameloop(time){
         createBarrier();
     }
     draw_barrier();
+    check_role();
     draw_text();
     var h=window.requestAnimationFrame(gameloop);
 

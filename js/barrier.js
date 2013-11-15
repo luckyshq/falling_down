@@ -33,6 +33,7 @@ function barrier(x,y,width,height,way,speed,status){
     this.way = way;
     this.speed = speed;
     this.status = status;
+    this.type = 0;           //0 stands for fatal barrier
 }
 
 
