@@ -77,8 +77,8 @@ function add_sheld()
 
 function dead()
 {
-    pauseGame();
-    hit_div.style.display="inline-block";
+    // pauseGame();
+    // hit_div.style.display="inline-block";
     //user choose to live or not
     gameOver();
 }

@@ -3,7 +3,7 @@ var ctx;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
-
+var hAnimation;
 
 //box 
 var box = {
@@ -26,7 +26,8 @@ var fallingdown = {
     g_count: 0,  //global counter ,instead of using clock
     b_count: 0,   //use which barrier
     ctrl_speed: 1,  //control the speed of every barrier
-    point  : 0 
+    point  : 0 ,
+    finalPoint:0
 };
 
 var unit = 20;
@@ -39,6 +40,7 @@ function draw_text () {
 }
 
 function gameOver(){
+    fallingdown.finalPoint = fallingdown.point;
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
     fallingdown.point = 0;
@@ -51,7 +53,8 @@ function gameOver(){
     role.way = 1;
     bgy = 0;
     $.mobile.changePage($("#gameover"));
-    window.cancelAnimationFrame(h);
+    $("#finalPoint").html(fallingdown.finalPoint);
+    window.cancelAnimationFrame(hAnimation);
 }
 
 function gameloop(time){
@@ -76,7 +79,7 @@ function gameloop(time){
     draw_barrier();
     check_role();
     draw_text();
-    var h=window.requestAnimationFrame(gameloop);
+    hAnimation=window.requestAnimationFrame(gameloop);
 
 }
 
