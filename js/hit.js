@@ -12,9 +12,9 @@ function check_role()
     {
         for(var nn = 0; nn<hh; nn++)
         {
-            if ((fallingdown.barrier[nn].y <= role.y + role.height - sensitivity && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y - sensitivity)) 
+            if ((fallingdown.barrier[nn].y <= role.y + role.height - sensitivity && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y + sensitivity)) 
             {
-                if (fallingdown.barrier[nn].x <= role.x + role.width- sensitivity &&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x - sensitivity) 
+                if (fallingdown.barrier[nn].x <= role.x + role.width- sensitivity &&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x + sensitivity) 
                 {
                 //hit_div.setAttribute("display","block");
                 //hit_div.style.display="inline-block";
@@ -80,4 +80,5 @@ function dead()
     pauseGame();
     hit_div.style.display="inline-block";
     //user choose to live or not
+    gameOver();
 }

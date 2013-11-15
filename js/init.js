@@ -58,18 +58,14 @@ function gameloop(time){
     fallingdown.g_count++;
     fallingdown.g_count %= 100;
      var hh = fallingdown.barrier.length;
-    for(var nn = 0; nn<hh; nn++){
-    if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
-        if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
-<<<<<<< HEAD
-             //reStart();
-=======
-             gameOver();
->>>>>>> 799377e78ccb8689d59880390a8a59a33c5f95f5
-            break;
-        };
-    };
-    }
+    // for(var nn = 0; nn<hh; nn++){
+    // if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
+    //     if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
+    //          gameOver();
+    //         break;
+    //     };
+    // };
+    // }
     fallingdown.point = fallingdown.point+12;
     draw_bg();
     draw_role();
