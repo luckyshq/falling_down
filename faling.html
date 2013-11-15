@@ -52,9 +52,11 @@
 
 <div data-role="page" id="gameover">
     <div data-role="header">
-        <h1>Gameover</h1>
+        <h1>GameOver</h1>
     </div>
     <div data-role="content">
+        <a href="#welcome" data-role="button" data-theme="b">MENU</a>
+        <a class="start" href="#game" data-role="button" data-theme="b">retart</a>
     	<div id="point">
 
     	</div>	
@@ -65,18 +67,15 @@
     <div data-role="header">
         <h1>Option</h1>
     </div>
-    <div data-role="content">
-    	<a href="#welcome" data-role="button" data-theme="b">back</a>
-    </div>
-    
-    
+    <div data-role="content">   
      <!--in order to turn in the volume-->
-    <div id="progressBar">
-    	<div id="au"><h1>VOLUME</h1></div>
-    	<input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
-    </div>
-    
-    	 
+        <div id="progressBar">
+    	   <div id="au"><h1>VOLUME</h1></div>
+    	   <input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
+        </div>
+        
+        <a href="#welcome" data-role="button" data-theme="b">back</a>
+    </div>	 
     <script>
     	function setVolume() {
  		  var volume = document.getElementById("volume");
