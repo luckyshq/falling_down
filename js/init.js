@@ -37,7 +37,7 @@ function draw_text () {
     ctx.fillText("Point:"+fallingdown.point,20,30);
 }
 
-function reStart(){
+function gameOver(){
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
     fallingdown.point = 0;
@@ -49,6 +49,8 @@ function reStart(){
     role.direction = 0;
     role.way = 1;
     bgy = 0;
+    $.mobile.changePage($("#gameover"));
+    window.cancelAnimationFrame(h);
 }
 
 function gameloop(time){
@@ -58,7 +60,7 @@ function gameloop(time){
     for(var nn = 0; nn<hh; nn++){
     if ((fallingdown.barrier[nn].y <= role.y + role.height && fallingdown.barrier[nn].y+fallingdown.barrier[nn].height>role.y)) {
         if (fallingdown.barrier[nn].x <= role.x+role.width&&fallingdown.barrier[nn].x+fallingdown.barrier[nn].width>role.x) {
-             reStart();
+             gameOver();
             break;
         };
     };
