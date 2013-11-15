@@ -48,6 +48,7 @@ function reStart(){
     role.status = 0;
     role.direction = 0;
     role.way = 1;
+    bgy = 0;
 }
 
 function gameloop(time){
@@ -61,10 +62,11 @@ function gameloop(time){
             break;
         };
     };
-}
+    }
     fallingdown.point = fallingdown.point+12;
-
+    draw_bg();
     draw_role();
+    
     if(fallingdown.g_count == 1){
         createBarrier();
     }
