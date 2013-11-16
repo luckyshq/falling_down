@@ -8,7 +8,7 @@ var role = {
 	direction:0,
     way:1,
 
-    sheld:0,          //1 role has a sheld
+    sheld:1,          //1 role has a sheld
     harmless:0,       //0 role is not harmless
     dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 
 }
@@ -63,8 +63,18 @@ function draw_role(){
 
     ctx.drawImage(img,role.status*role.width,0,
             role.width,role.height,role.x,role.y,role.width,role.height);       
-    
-    role.status=(role.status+1)%6; 
+    role.status=(role.status+1)%6;
+
+    if (role.sheld==1) {
+        ctx.drawImage(sheldAmtImg,sheldAmt.s*sheldAmt.width,
+            sheldAmt.h*sheldAmt.height,sheldAmt.width,sheldAmt.height,
+            role.x-35,role.y-20,role.width+60,role.height+50);
+        sheldAmt.s=sheldAmt.s+1;
+        if (sheldAmt.s==5) {
+            sheldAmt.s=0;
+            sheldAmt.h=(sheldAmt.h=sheldAmt.h+1)%4;
+        };
+    }; 
 }
 
  $(document).keydown(function(e){

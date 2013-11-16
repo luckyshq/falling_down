@@ -41,3 +41,12 @@ function draw_item()
         }
     }
 }
+//the atribution of effect image
+var sheldAmt={
+    x:0,
+    y:0,
+    width:192,
+    height:192,
+    s:0,
+    h:0
+}

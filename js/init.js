@@ -4,6 +4,7 @@ var img=new Image();
 var barrierImg=new Image();
 var bgImage=new Image();
 var item_sheld_Img = new Image();
+var sheldAmtImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
 var hAnimation;
@@ -115,6 +116,7 @@ $(function init() {
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld.png";
+    sheldAmtImg.src="images/sheldAmt.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;
