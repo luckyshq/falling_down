@@ -1,0 +1,45 @@
+#au{
+       color:black;
+       text-align:center;
+   }
+#progressBar { 
+      border:10px solid #aaa; 
+      color:#000000; 
+   	width:document.body.clientWidth; 
+  	height:250px;
+   }
+#hit{
+	width:200px;
+	height:110px;
+    background:url(dialog.png);
+    display: none;
+    position: absolute;
+    left: 60px;
+    top: 320px;
+}
+
+.input1{
+	width:68px;
+  	  height:25px;
+   	 border-style: none;
+     border-color: inherit; 
+   	 border-width: 0;
+	position: absolute;
+    left: 20px;
+    top: hit.top-input1.height;
+	background:url("images/button_normal.png");
+  
+}
+
+.input2{
+	width:68px;
+  	  height:25px;
+   	 border-style: none;
+     border-color: inherit; 
+   	 border-width: 0;
+	position: absolute;
+    left: 115px;
+    top: hit.top-input2.height;
+	background:url("images/button_normal.png");
+	
+}
