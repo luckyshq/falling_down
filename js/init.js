@@ -115,7 +115,7 @@ $(function init() {
     rightRoleImg = "images/role_right.png";
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
-    item_sheld_Img.src="images/sheld.png";
+    item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
 
     $("#man").on("swipeleft",function() {
