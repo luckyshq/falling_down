@@ -84,7 +84,11 @@ function change_life()
 
 function pauseGame()
 {
+    cancelAnimationFrame(hAnimation);
+}
 
+function continueGame () {
+    gameloop();
 }
 
 function add_sheld()
@@ -99,8 +103,15 @@ function add_sheld()
 
 function dead()
 {
+    role.dead=1;
     pauseGame();
     hit_div.style.display="inline-block";
     //user choose to live or not
     //gameOver();
+}
+
+function reLife () {
+    role.dead = 0;
+    hit_div.style.display="none";
+    continueGame();
 }
