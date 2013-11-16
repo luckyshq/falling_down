@@ -1,7 +1,4 @@
 //role 
-
-
-
 var role = {
 	x:135,
 	y:250,

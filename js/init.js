@@ -81,6 +81,7 @@ function gameloop(time){
         createBarrier();
     }
     draw_barrier();
+    draw_item();
     check_role();
     check_item();
     draw_text();
@@ -106,7 +107,7 @@ $(function init() {
     img.src="images/role.png";
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
-    item_sheld_Img="images/sheld.png";
+    item_sheld_Img.src="images/sheld.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;

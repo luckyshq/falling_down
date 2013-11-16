@@ -56,8 +56,8 @@ function check_item ()
             {
 
 
-                if(fallingdown.item[nn].type == 0) add_harmless();
-                if(fallingdown.item[nn].type == 1) add_sheld();
+                if(fallingdown.item[nn].type == 8) add_harmless();
+                if(fallingdown.item[nn].type == 9) add_sheld();
                 fallingdown.item.splice(nn,1)
             }
         
@@ -94,6 +94,17 @@ function add_sheld()
                 {
                     role.sheld = 0;
                 },10000);
+}
+
+function add_harmless()
+{
+    fallingdown.ctrl_speed = 5;
+    role.harmless = 1;
+    setTimeout(function()
+                {
+                    fallingdown.ctrl_speed = 1;
+                    role.harmless = 0;
+                },5000);
 
 }
 

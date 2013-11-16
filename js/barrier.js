@@ -43,7 +43,8 @@ function createBarrier(){
     if(fallingdown.b_count == 26*3){
         fallingdown.b_count = 0;
     }
-    for(var i = 0; i<3; i++ ,fallingdown.b_count++){
+    for(var i = 0; i<3; i++ ,fallingdown.b_count++)
+    {
         if(barrierArray[fallingdown.b_count][0] == 0){
            // continue;
         }else if(barrierArray[fallingdown.b_count][0] == 1){
@@ -57,9 +58,9 @@ function createBarrier(){
         }
         else if(barrierArray[fallingdown.b_count][0] == 9)  //a sheld is created
         {
-            fallingdown.item.push(new item(1));
+            fallingdown.item.push(new item(9));
 
-        };
+        }
     }
 }
 
