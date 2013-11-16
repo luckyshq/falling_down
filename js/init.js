@@ -4,6 +4,8 @@ var img=new Image();
 var barrierImg=new Image();
 var bgImage=new Image();
 var item_sheld_Img = new Image();
+var leftRoleImg = new Image();
+var rightRoleImg = new Image();
 var hAnimation;
 
 //box 
@@ -58,7 +60,7 @@ function gameOver(){
     bgy = 0;
     $.mobile.changePage($("#gameover"));
     $("#finalPoint").html(fallingdown.finalPoint);
-    window.cancelAnimationFrame(hAnimation);
+    //window.cancelAnimationFrame(hAnimation);
 }
 
 function gameloop(time){
@@ -85,11 +87,14 @@ function gameloop(time){
     check_role();
     check_item();
     draw_text();
+    if(role.dead==1)
+        return;
     hAnimation=window.requestAnimationFrame(gameloop);
 
 }
 
 function initGame () {
+    role.dead=0;
     gameloop(Date.now);
 }
     
@@ -105,6 +110,8 @@ $(function init() {
   
 
     img.src="images/role.png";
+    leftRoleImg = "images/role_left.png";
+    rightRoleImg = "images/role_right.png";
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld.png";
