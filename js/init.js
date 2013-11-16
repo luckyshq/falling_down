@@ -3,6 +3,7 @@ var ctx;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
+var item_sheld_Img = new Image();
 var hAnimation;
 
 //box 
@@ -23,6 +24,7 @@ var bound = {
 
 var fallingdown = {
     barrier: [], //barrier array
+    item:[],
     g_count: 0,  //global counter ,instead of using clock
     b_count: 0,   //use which barrier
     ctrl_speed: 1,  //control the speed of every barrier
@@ -40,6 +42,8 @@ function draw_text () {
 }
 
 function gameOver(){
+    var hit_div = document.getElementById("hit");
+    hit_div.style.display="none";
     fallingdown.finalPoint = fallingdown.point;
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
@@ -78,6 +82,7 @@ function gameloop(time){
     }
     draw_barrier();
     check_role();
+    check_item();
     draw_text();
     hAnimation=window.requestAnimationFrame(gameloop);
 
@@ -101,6 +106,7 @@ $(function init() {
     img.src="images/role.png";
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
+    item_sheld_Img="images/sheld.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;

@@ -19,7 +19,12 @@ function check_role()
                 //hit_div.setAttribute("display","block");
                 //hit_div.style.display="inline-block";
                 //document.write("<p>hit</p>");
-                    if(fallingdown.barrier[nn].type == 0) check_sheld();
+                    if(fallingdown.barrier[nn].type == 0) 
+                    {
+                            fallingdown.barrier.splice(nn,1);
+                            hh--;
+                            check_sheld();
+                    }
                     else change_life();
 
                     //if (role.sheld == 0) add_sheld();
@@ -35,16 +40,28 @@ function check_role()
             };
         }
     }
-    else   
+    else   add_harmless();
+
+}
+
+function check_item () 
+{
+    var hh=fallingdown.item.length;
+
+    for(var nn = 0; nn<hh; nn++)
     {
-        var t_count=0;
-        fallingdown.ctrl_speed = 5;
-        role.harmless = 1;
-        setTimeout(function()
-                    {
-                        fallingdown.ctrl_speed = 1;
-                        role.harmless = 0;
-                    },5000);
+        if ((fallingdown.item[nn].y <= role.y + role.height && fallingdown.item[nn].y+fallingdown.item[nn].height>role.y )) 
+        {
+            if (fallingdown.item[nn].x <= role.x + role.width &&fallingdown.item[nn].x+fallingdown.item[nn].width>role.x ) 
+            {
+
+
+                if(fallingdown.item[nn].type == 0) add_harmless();
+                if(fallingdown.item[nn].type == 1) add_sheld();
+                fallingdown.item.splice(nn,1)
+            }
+        
+        }
     }
 
 }
@@ -73,12 +90,17 @@ function pauseGame()
 function add_sheld()
 {
     role.sheld = 1;
+    setTimeout(function()
+                {
+                    role.sheld = 0;
+                },10000);
+
 }
 
 function dead()
 {
-    // pauseGame();
-    // hit_div.style.display="inline-block";
+    pauseGame();
+    hit_div.style.display="inline-block";
     //user choose to live or not
-    gameOver();
+    //gameOver();
 }

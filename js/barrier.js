@@ -1,9 +1,9 @@
 var barrierArray = 
 [[0,0],[0,0],[0,0],
 [0,0],[0,0],[0,0],
-[0,0],[0,0],[0,0],
-[0,0],[1,4],[2,2],
-[0,0],[1,2],[0,0],
+[9,0],[0,0],[0,0],
+[9,0],[1,4],[2,2],
+[9,0],[1,2],[0,0],
 [0,0],[1,2],[0,0],
 [0,0],[1,2],[1,2],
 [1,2],[1,2],[1,4],
@@ -43,20 +43,23 @@ function createBarrier(){
     if(fallingdown.b_count == 26*3){
         fallingdown.b_count = 0;
     }
-    for(var i = 0; i<3; i++){
+    for(var i = 0; i<3; i++ ,fallingdown.b_count++){
         if(barrierArray[fallingdown.b_count][0] == 0){
-            fallingdown.b_count++;
            // continue;
         }else if(barrierArray[fallingdown.b_count][0] == 1){
             fallingdown.barrier.push(new barrier(1,120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
-            fallingdown.b_count++;
         }else if(barrierArray[fallingdown.b_count][0] == 2){
             fallingdown.barrier.push(new barrier(2,120*i+50,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
-            fallingdown.b_count++;
+
         }else if(barrierArray[fallingdown.b_count][0] == 3){
             fallingdown.barrier.push(new barrier(3,120*i,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
-            fallingdown.b_count++;
+
         }
+        else if(barrierArray[fallingdown.b_count][0] == 9)  //a sheld is created
+        {
+            fallingdown.item.push(new item(1));
+
+        };
     }
 }
 
