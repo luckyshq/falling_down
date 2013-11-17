@@ -117,15 +117,21 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
-
-    $("#man").on("swipeleft",function() {
+    $$("#man").swipeLeft(function() {
         role.direction = 1;
         role.way = role.way-1;
         if (role.way<0) {
             role.way = 0;
         };
     });
-    $("#man").on("swiperight",function() {
+    // $("#man").on("swipeleft",function() {
+    //     role.direction = 1;
+    //     role.way = role.way-1;
+    //     if (role.way<0) {
+    //         role.way = 0;
+    //     };
+    // });
+    $$("#man").swipeRight(function() {
         role.direction = 2;
         role.way = role.way + 1;
         if (role.way>2) {
