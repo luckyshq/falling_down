@@ -7,6 +7,7 @@ var barrierImg=new Image();
 var bgImage=new Image();
 var item_sheld_Img = new Image();
 var sheldAmtImg = new Image();
+var barrierDraImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
 var up_Img = new Image();
@@ -142,6 +143,7 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
+    barrierDraImg.src="images/barrier_dragon.png";
 
     up_Img.src = "images/up.png";
     down_Img.src = "images/down.png";

@@ -72,7 +72,7 @@ function draw_barrier () {
     {
 
        //ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
-       
+       if (fallingdown.barrier[nn].kind==1) {
        ctx.drawImage(barrierImg,
         fallingdown.barrier[nn].status*180,
         0,
@@ -84,16 +84,44 @@ function draw_barrier () {
         fallingdown.barrier[nn].y,
         fallingdown.barrier[nn].width,
         fallingdown.barrier[nn].height);
-       
+       };
        fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%9;
 
        fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed;
        if(fallingdown.barrier[nn].kind==2){
-         fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;
-       }
+            fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;
+            if (fallingdown.barrier[nn].status==8) {
+                fallingdown.barrier[nn].status==0;
+            };
+            ctx.drawImage(barrierDraImg,
+            fallingdown.barrier[nn].status*200,
+            251*2,
+        // fallingdown.barrier[nn].width,
+        // fallingdown.barrier[nn].height,
+            200,
+            251,
+            fallingdown.barrier[nn].x,
+            fallingdown.barrier[nn].y,
+            fallingdown.barrier[nn].width,
+            fallingdown.barrier[nn].height);   
+        }
 
        if(fallingdown.barrier[nn].kind==3){
-         fallingdown.barrier[nn].x = fallingdown.barrier[nn].x + 2;
+            fallingdown.barrier[nn].x = fallingdown.barrier[nn].x + 2;
+            if (fallingdown.barrier[nn].status==8) {
+                fallingdown.barrier[nn].status==0;
+            };
+            ctx.drawImage(barrierDraImg,
+            fallingdown.barrier[nn].status*200,
+            251,
+        // fallingdown.barrier[nn].width,
+        // fallingdown.barrier[nn].height,
+            200,
+            251,
+            fallingdown.barrier[nn].x,
+            fallingdown.barrier[nn].y,
+            fallingdown.barrier[nn].width,
+            fallingdown.barrier[nn].height);
        }
 
         if (fallingdown.barrier[nn].y < 0) {
