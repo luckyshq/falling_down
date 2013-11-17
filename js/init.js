@@ -7,8 +7,14 @@ var item_sheld_Img = new Image();
 var sheldAmtImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
+var up_Img = new Image();
+var down_Img = new Image();
+var left_Img = new Image();
+var right_Img = new Image();
 var hAnimation;
 
+var gesture = [];
+var g_status = 0;
 //box 
 var box = {
 	x:0,
@@ -65,6 +71,7 @@ function gameOver(){
 }
 
 function gameloop(time){
+    if(g_status == 0){
     fallingdown.g_count++;
     fallingdown.g_count %= 100;
      var hh = fallingdown.barrier.length;
@@ -90,6 +97,7 @@ function gameloop(time){
     draw_text();
     if(role.dead==1)
         return;
+    }
     hAnimation=window.requestAnimationFrame(gameloop);
 
 }
@@ -117,6 +125,10 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
+    up_Img.src = "images/up.png";
+    down_Img.src = "images/down.png";
+    left_Img.src = "images/left.png";
+    right_Img.src = "images/right.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;

@@ -25,7 +25,13 @@ function check_role()
                             hh--;
                             check_sheld();
                     }
-                    else change_life();
+                    else if(fallingdown.barrier[nn].type == 1){
+                        fallingdown.barrier.splice(nn,1);
+                         hh--;
+                         innergame();
+                    }
+                    else
+                        change_life();
 
                     //if (role.sheld == 0) add_sheld();
 

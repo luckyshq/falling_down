@@ -78,22 +78,37 @@ function draw_role(){
 }
 
  $(document).keydown(function(e){
-    	switch(e.which){
-		case 37:
-       		role.direction = 1;
+        if(g_status == 1){
+                
+                if(e.which == gesture[0]){
+                gesture.splice(0,1);
+            }
+            if(gesture.length == 0){
+                $("#innergame").removeClass('cameout');
+                $("#innergame").addClass('fadeout');
+                g_status = 0;
+            }
+
+
+
+        }else{
+        switch(e.which){
+        case 37:
+            role.direction = 1;
             role.way = role.way-1;
             if (role.way<0) {
                 role.way = 0;
             };
-			break;
-		case 39:
-			role.direction = 2;
+            break;
+        case 39:
+            role.direction = 2;
             role.way = role.way + 1;
             if (role.way>2) {
                 role.way = 2;
             };
-			break;
-		default:  
+            break;
+        default:  
             break; 
-		}
+        }
+    }
     });
