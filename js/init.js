@@ -80,7 +80,7 @@ function gameOver(){
     $("#innergame").addClass('fadeout');
     $.mobile.changePage($("#gameover"));
     $("#finalPoint").html(fallingdown.finalPoint);
-    //window.cancelAnimationFrame(hAnimation);
+    window.cancelAnimationFrame(hAnimation);
 }
 
 function gameloop(time){
