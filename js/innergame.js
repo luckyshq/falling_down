@@ -28,8 +28,7 @@ function innergame(){
 }
 
 function drawInner(){
-    var canvas_inner = document.getElementById("innergame");
-    var ctx_innergame = canvas_inner.getContext("2d");
+ 
     var len = gesture.length;
     for(var i = 0; i<len; i++){
         if(gesture[i] == 37)

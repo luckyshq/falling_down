@@ -1,5 +1,7 @@
 var canvas;  
 var ctx;
+var canvas_inner;
+var ctx_innergame;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
@@ -11,6 +13,10 @@ var up_Img = new Image();
 var down_Img = new Image();
 var left_Img = new Image();
 var right_Img = new Image();
+var up2_Img = new Image();
+var down2_Img = new Image();
+var left2_Img = new Image();
+var right2_Img = new Image();
 var hAnimation;
 
 var gesture = [];
@@ -59,12 +65,16 @@ function gameOver(){
     fallingdown.point = 0;
     fallingdown.g_count = 0;
     fallingdown.b_count = 0;
+    gesture = [];
+    g_status = 0;
     role.x = 135;
     role.y = 250;
     role.status = 0;
     role.direction = 0;
     role.way = 1;
     bgy = 0;
+    $("#innergame").removeClass('cameout');
+    $("#innergame").addClass('fadeout');
     $.mobile.changePage($("#gameover"));
     $("#finalPoint").html(fallingdown.finalPoint);
     //window.cancelAnimationFrame(hAnimation);
@@ -114,7 +124,8 @@ $(function init() {
     ctx=canvas.getContext('2d');
     canvasBg=document.getElementById("bg");  
     ctxBg=canvas.getContext('2d');
-
+    canvas_inner = document.getElementById("innergame");
+    ctx_innergame = canvas_inner.getContext("2d");
     //createBarrier();
   
 
@@ -129,6 +140,11 @@ $(function init() {
     down_Img.src = "images/down.png";
     left_Img.src = "images/left.png";
     right_Img.src = "images/right.png";
+    
+    up2_Img.src = "images/up2.png";
+    down2_Img.src = "images/down2.png";
+    left2_Img.src = "images/left2.png";
+    right2_Img.src = "images/right2.png";
 
     $("#man").on("swipeleft",function() {
         role.direction = 1;
