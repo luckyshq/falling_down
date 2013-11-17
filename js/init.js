@@ -23,7 +23,7 @@ var right2_Img = new Image();
 var hAnimation;
 
 var Audio;
-var Animation;//The start animation;
+//var Animation;//The start animation;
 
 var gesture = [];
 var g_status = 0;
@@ -191,8 +191,8 @@ $(function init() {
         };
     });
     $(".start").on("click",function() {
-    	Animation.pause();
-    	Audio.play();
+//    	Animation.pause();
+//    	Audio.play();
         initGame();
     });
 });
