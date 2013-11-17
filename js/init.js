@@ -1,5 +1,7 @@
 var canvas;  
 var ctx;
+var canvas_inner;
+var ctx_innergame;
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
@@ -7,8 +9,21 @@ var item_sheld_Img = new Image();
 var sheldAmtImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
+var up_Img = new Image();
+var down_Img = new Image();
+var left_Img = new Image();
+var right_Img = new Image();
+var up2_Img = new Image();
+var down2_Img = new Image();
+var left2_Img = new Image();
+var right2_Img = new Image();
 var hAnimation;
 
+var Audio;
+var Animation;//The start animation;
+
+var gesture = [];
+var g_status = 0;
 //box 
 var box = {
 	x:0,
@@ -53,18 +68,23 @@ function gameOver(){
     fallingdown.point = 0;
     fallingdown.g_count = 0;
     fallingdown.b_count = 0;
+    gesture = [];
+    g_status = 0;
     role.x = 135;
     role.y = 250;
     role.status = 0;
     role.direction = 0;
     role.way = 1;
     bgy = 0;
+    $("#innergame").removeClass('cameout');
+    $("#innergame").addClass('fadeout');
     $.mobile.changePage($("#gameover"));
     $("#finalPoint").html(fallingdown.finalPoint);
-    //window.cancelAnimationFrame(hAnimation);
+    window.cancelAnimationFrame(hAnimation);
 }
 
 function gameloop(time){
+    if(g_status == 0){
     fallingdown.g_count++;
     fallingdown.g_count %= 100;
      var hh = fallingdown.barrier.length;
@@ -90,6 +110,7 @@ function gameloop(time){
     draw_text();
     if(role.dead==1)
         return;
+    }
     hAnimation=window.requestAnimationFrame(gameloop);
 
 }
@@ -106,8 +127,12 @@ $(function init() {
     ctx=canvas.getContext('2d');
     canvasBg=document.getElementById("bg");  
     ctxBg=canvas.getContext('2d');
-
+    canvas_inner = document.getElementById("innergame");
+    ctx_innergame = canvas_inner.getContext("2d");
     //createBarrier();
+  
+  	 Audio=document.getElementById("audio");
+     Animation=document.getElementById("animation");
   
 
     img.src="images/role.png";
@@ -117,7 +142,21 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
+<<<<<<< HEAD
     $$("#man").swipeLeft(function() {
+=======
+    up_Img.src = "images/up.png";
+    down_Img.src = "images/down.png";
+    left_Img.src = "images/left.png";
+    right_Img.src = "images/right.png";
+    
+    up2_Img.src = "images/up2.png";
+    down2_Img.src = "images/down2.png";
+    left2_Img.src = "images/left2.png";
+    right2_Img.src = "images/right2.png";
+
+    $("#man").on("swipeleft",function() {
+>>>>>>> 5702b9c97bc9c9ba5bb24dedebae05cb5f096827
         role.direction = 1;
         role.way = role.way-1;
         if (role.way<0) {
@@ -139,6 +178,8 @@ $(function init() {
         };
     });
     $(".start").on("click",function() {
+    	Animation.pause();
+    	Audio.play();
         initGame();
     });
 });

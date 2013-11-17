@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/background.js"></script>
 <script type="text/javascript" src="js/hit.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/innergame.js"></script>
 <script src="js/jquery.mobile-1.3.2.js"></script>
 
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no"/>
@@ -22,8 +23,26 @@
 <body>
 	
 
-<audio id="audio" src="music/background.mp3"  autoplay loop> 
+<audio id="audio" src="music/background.mp3"   loop> 
 </audio>
+
+
+<div data-role="page" id="animat">
+	<video id="animation"  src="animation/1.webm" autoplay   onclick="welcome()">
+    </video>
+    
+</div>
+
+    <script type="text/javascript">
+    	function welcome(){
+    	var animat = document.getElementById("animat");
+        animat.style.display="none";
+        
+    	$.mobile.changePage($("#welcome"));
+     	location.reload($("#welcome"));
+    	};
+    </script>
+
 
 
 <div data-role="page" id="welcome" style=position:absolute width=document.body.clientWidth height=document.body.clientHeight>
@@ -40,7 +59,7 @@
 <div data-role="page" id="game">
         <canvas id="bg" width=document.body.clientWidth height=document.body.clientHeight  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
         <canvas id="man" width="360" height="640"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-
+         <canvas id="innergame" width="360" height="640"  style="z-index:0;position:absolute;top:50px;left:0px;"></canvas>
         
 </div>
 
