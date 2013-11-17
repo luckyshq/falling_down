@@ -142,15 +142,6 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
-    up_Img.src = "images/up.png";
-    down_Img.src = "images/down.png";
-    left_Img.src = "images/left.png";
-    right_Img.src = "images/right.png";
-    
-    up2_Img.src = "images/up2.png";
-    down2_Img.src = "images/down2.png";
-    left2_Img.src = "images/left2.png";
-    right2_Img.src = "images/right2.png";
 
     up_Img.src = "images/up.png";
     down_Img.src = "images/down.png";
