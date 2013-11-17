@@ -19,6 +19,9 @@ var left2_Img = new Image();
 var right2_Img = new Image();
 var hAnimation;
 
+var Audio;
+var Animation;//The start animation;
+
 var gesture = [];
 var g_status = 0;
 //box 
@@ -128,6 +131,9 @@ $(function init() {
     ctx_innergame = canvas_inner.getContext("2d");
     //createBarrier();
   
+  	 Audio=document.getElementById("audio");
+     Animation=document.getElementById("animation");
+  
 
     img.src="images/role.png";
     leftRoleImg = "images/role_left.png";
@@ -161,6 +167,8 @@ $(function init() {
         };
     });
     $(".start").on("click",function() {
+    	Animation.pause();
+    	Audio.play();
         initGame();
     });
 });

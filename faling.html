@@ -23,8 +23,26 @@
 <body>
 	
 
-<audio id="audio" src="music/background.mp3"  autoplay loop> 
+<audio id="audio" src="music/background.mp3"   loop> 
 </audio>
+
+
+<div data-role="page" id="animat">
+	<video id="animation"  src="animation/1.webm" autoplay   onclick="welcome()">
+    </video>
+    
+</div>
+
+    <script type="text/javascript">
+    	function welcome(){
+    	var animat = document.getElementById("animat");
+        animat.style.display="none";
+        
+    	$.mobile.changePage($("#welcome"));
+     	location.reload($("#welcome"));
+    	};
+    </script>
+
 
 
 <div data-role="page" id="welcome" style=position:absolute width=document.body.clientWidth height=document.body.clientHeight>
