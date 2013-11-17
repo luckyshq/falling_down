@@ -26,11 +26,22 @@ function draw_item()
     var nn = 0; 
     while(nn<fallingdown.item.length)
     {
-        ctx.drawImage(item_sheld_Img,
-        fallingdown.item[nn].x,
-        fallingdown.item[nn].y,
-        fallingdown.item[nn].width,
-        fallingdown.item[nn].height);
+        if(fallingdown.item[nn].type == 9)
+        {
+            ctx.drawImage(item_sheld_Img,
+                            fallingdown.item[nn].x,
+                            fallingdown.item[nn].y,
+                            fallingdown.item[nn].width,
+                            fallingdown.item[nn].height);
+        }
+        if(fallingdown.item[nn].type ==7)
+        {
+            ctx.drawImage(item_money_Img,
+                            fallingdown.item[nn].x,
+                            fallingdown.item[nn].y,
+                            fallingdown.item[nn].width,
+                            fallingdown.item[nn].height);
+        }
         //fallingdown.item[nn].status=(fallingdown.item[nn].status+1)%9;
 
         fallingdown.item[nn].y = fallingdown.item[nn].y - fallingdown.item[nn].speed * fallingdown.ctrl_speed;

@@ -7,11 +7,11 @@ var barrierArray =
 [0,0],[1,2],[0,0],
 [0,0],[1,2],[1,2],
 [1,2],[1,2],[1,4],
-[0,0],[0,0],[1,2],
-[0,0],[1,4],[0,0],
-[0,0],[0,0],[1,2],
+[7,0],[0,0],[1,2],
+[7,0],[1,4],[0,0],
+[0,0],[7,0],[1,2],
 [0,0],[1,4],[1,0],
-[3,2],[0,0],[1,2],
+[3,2],[7,0],[1,2],
 [1,2],[1,2],[0,0],
 [1,6],[1,6],[0,0],
 [0,0],[1,6],[1,6],
@@ -54,6 +54,9 @@ function createBarrier(){
 
         }else if(barrierArray[fallingdown.b_count][0] == 3){
             fallingdown.barrier.push(new barrier(3,120*i,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
+
+        }else if(barrierArray[fallingdown.b_count][0] == 7){
+            fallingdown.item.push(new item(7));
 
         }
         else if(barrierArray[fallingdown.b_count][0] == 9)  //a sheld is created

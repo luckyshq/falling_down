@@ -6,6 +6,7 @@ var img=new Image();
 var barrierImg=new Image();
 var bgImage=new Image();
 var item_sheld_Img = new Image();
+var item_money_Img = new Image();
 var sheldAmtImg = new Image();
 var barrierDraImg = new Image();
 var leftRoleImg = new Image();
@@ -48,7 +49,8 @@ var fallingdown = {
     b_count: 0,   //use which barrier
     ctrl_speed: 1,  //control the speed of every barrier
     point  : 0 ,
-    finalPoint:0
+    finalPoint:0,
+    total_money:0
 };
 
 var unit = 20;
@@ -58,6 +60,14 @@ function draw_text () {
     ctx.textAlign = "left";
     ctx.fillStyle = "#FF0000";
     ctx.fillText("Point:"+fallingdown.point,20,30);
+}
+
+function draw_money()
+{
+    ctx.font = "26px Arial";
+    ctx.textAlign = "right";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("Money:"+fallingdown.total_money,350,30);
 }
 
 function gameOver(){
@@ -109,6 +119,7 @@ function gameloop(time){
     check_role();
     check_item();
     draw_text();
+    draw_money();
     if(role.dead==1)
         return;
     }
@@ -142,6 +153,7 @@ $(function init() {
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
+    item_money_Img.src = "images/money.png";
     sheldAmtImg.src="images/sheldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
 
