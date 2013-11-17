@@ -142,9 +142,7 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_sheld_Img.src="images/sheld_icon.png";
     sheldAmtImg.src="images/sheldAmt.png";
-<<<<<<< HEAD
-    $$("#man").swipeLeft(function() {
-=======
+
     up_Img.src = "images/up.png";
     down_Img.src = "images/down.png";
     left_Img.src = "images/left.png";
@@ -155,8 +153,7 @@ $(function init() {
     left2_Img.src = "images/left2.png";
     right2_Img.src = "images/right2.png";
 
-    $("#man").on("swipeleft",function() {
->>>>>>> 5702b9c97bc9c9ba5bb24dedebae05cb5f096827
+    $$("#man").swipeLeft(function() {
         role.direction = 1;
         role.way = role.way-1;
         if (role.way<0) {
