@@ -46,7 +46,7 @@ function check_role()
             };
         }
     }
-    else   add_harmless();
+    //else   add_harmless();
 
 }
 

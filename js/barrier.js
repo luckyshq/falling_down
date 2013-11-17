@@ -4,11 +4,11 @@ var barrierArray =
 [9,0],[0,0],[0,0],
 [9,0],[1,4],[2,2],
 [9,0],[1,2],[0,0],
-[0,0],[1,2],[0,0],
-[0,0],[1,2],[1,2],
-[1,2],[1,2],[1,4],
-[7,0],[0,0],[1,2],
-[7,0],[1,4],[0,0],
+[8,0],[1,2],[0,0],
+[8,0],[1,2],[1,2],
+[8,2],[1,2],[1,4],
+[8,0],[0,0],[1,2],
+[8,0],[1,4],[0,0],
 [0,0],[7,0],[1,2],
 [0,0],[1,4],[1,0],
 [3,2],[7,0],[1,2],
@@ -55,8 +55,14 @@ function createBarrier(){
         }else if(barrierArray[fallingdown.b_count][0] == 3){
             fallingdown.barrier.push(new barrier(3,120*i,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
 
-        }else if(barrierArray[fallingdown.b_count][0] == 7){
+        }else if(barrierArray[fallingdown.b_count][0] == 7)
+        {
             fallingdown.item.push(new item(7));
+
+        }
+        else if(barrierArray[fallingdown.b_count][0] == 8)  
+        {
+            fallingdown.item.push(new item(8));
 
         }
         else if(barrierArray[fallingdown.b_count][0] == 9)  //a sheld is created
@@ -90,7 +96,7 @@ function draw_barrier () {
        };
        fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%9;
 
-       fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed;
+       fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed * fallingdown.ctrl_speed;
        if(fallingdown.barrier[nn].kind==2){
             fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;
             if (fallingdown.barrier[nn].status==8) {

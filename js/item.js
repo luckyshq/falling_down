@@ -34,6 +34,15 @@ function draw_item()
                             fallingdown.item[nn].width,
                             fallingdown.item[nn].height);
         }
+        if(fallingdown.item[nn].type ==8)
+        {
+            ctx.drawImage(item_harmless_Img,
+                            fallingdown.item[nn].x,
+                            fallingdown.item[nn].y
+                          //  fallingdown.item[nn].width,
+                           // fallingdown.item[nn].height
+                           );
+        }
         if(fallingdown.item[nn].type ==7)
         {
             ctx.drawImage(item_money_Img,
