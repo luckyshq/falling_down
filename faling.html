@@ -5,6 +5,8 @@
 <link href="css/game.css" rel="stylesheet" type="text/css" />
 <script src="js/jquery-2.0.3.min.js"></script>
 <script src="js/quo.js"></script>
+<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
+<script type="text/javascript" src="js/renrenshare.js"></script>
 <script type="text/javascript" src="js/item.js"></script>
 <script type="text/javascript" src="js/barrier.js"></script>
 <script type="text/javascript" src="js/role.js"></script>
@@ -23,10 +25,10 @@
 <body>
 	
 
-<audio id="audio" src="music/background.mp3"   loop> 
+<audio id="audio" src="222music/background.mp3"   loop> 
 </audio>
 
-
+<!--
 <div data-role="page" id="animat">
 	<video id="animation"  src="animation/1.webm" autoplay   onclick="welcome()">
     </video>
@@ -42,7 +44,7 @@
      	location.reload($("#welcome"));
     	};
     </script>
-
+-->
 
 
 <div data-role="page" id="welcome" style=position:absolute width=document.body.clientWidth height=document.body.clientHeight>
@@ -67,12 +69,51 @@
 <div id="hit" >
             <p style="font-size:20px;text-align:center;font-family:cursive;">要复活吗？</p>
             <div style="font-size:20px;font-family:serif;">
-                <input type="button" class="input1" value="YES" onclick="reLife();">
+                <input id="button1"  type="button" class="input1" value="YES" onmousedown="reLife1()">
             </div>
             <div style="font-size:20px;font-family:serif;">
-                <input type="button" class="input2" value="NO" onclick="gameOver();">
+                <input id="button2" type="button" class="input2" value="NO" onmousedown="gameOver1()">
             </div>
 </div>
+
+<script>
+    function reLife1(){
+    	var button1=document.getElementById("button1");
+    	button1.style.backgroundPosition="68px 25px";
+    	
+    	button1.onmouseup=
+    	function ()
+    	{
+    		button1.style.backgroundPosition="0px 0px";
+    		reLife();
+    	};
+     	button1.onmouseout=
+    	function ()
+    	{
+    		button1.style.backgroundPosition="0px 0px";
+    	};
+    }
+    
+    function gameOver1(){
+    	var button2=document.getElementById("button2");
+    	button2.style.backgroundPosition="68px 25px";
+    	
+    	button2.onmouseup=
+    	function ()
+    	{
+    		button2.style.backgroundPosition="0px 0px";
+    		gameOver();
+    	};
+     	button2.onmouseout=
+    	function ()
+    	{
+    		button2.style.backgroundPosition="0px 0px";
+    	};
+    }
+    
+    
+</script>
+
 
 <div data-role="page" id="gameover">
     <div data-role="header">
@@ -101,6 +142,7 @@
     <div data-role="content">  
         <a class="start" href="#game" data-role="button" data-theme="b">restart</a>
         <a href="#welcome" data-role="button" data-theme="b">MENU</a>
+        <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;"></a>
     	<div id="point">
 
     	</div>	

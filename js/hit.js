@@ -46,7 +46,7 @@ function check_role()
             };
         }
     }
-    else   add_harmless();
+    //else   add_harmless();
 
 }
 
@@ -60,11 +60,11 @@ function check_item ()
         {
             if (fallingdown.item[nn].x <= role.x + role.width &&fallingdown.item[nn].x+fallingdown.item[nn].width>role.x ) 
             {
-
-
+                if(fallingdown.item[nn].type == 7) add_money();
                 if(fallingdown.item[nn].type == 8) add_harmless();
                 if(fallingdown.item[nn].type == 9) add_sheld();
-                fallingdown.item.splice(nn,1)
+                fallingdown.item.splice(nn,1);
+                hh--;
             }
         
         }
@@ -95,6 +95,12 @@ function pauseGame()
 
 function continueGame () {
     gameloop();
+}
+
+function add_money()
+{
+    //首先要获取本地存储的total_money
+    fallingdown.total_money += 30;
 }
 
 function add_sheld()
