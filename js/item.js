@@ -10,7 +10,7 @@
 
 function item(type)
 {
-    this.x=20 ;
+    this.x=15 ;
     this.y=640;
     this.width=53;
     this.height=53;
@@ -18,6 +18,8 @@ function item(type)
     this.status=0;
     this.speed=4;
     this.type = type; //type defines what kind of item it is .0 stands for harmless,1 stands for sheld......
+    this.s=0;
+    this.h=0;
 }
 
 function draw_item() 
@@ -37,19 +39,38 @@ function draw_item()
         if(fallingdown.item[nn].type ==8)
         {
             ctx.drawImage(item_harmless_Img,
+                            fallingdown.item[nn].s*70,
+                            fallingdown.item[nn].h*70,
+                            70,
+                            70,
                             fallingdown.item[nn].x,
-                            fallingdown.item[nn].y
-                          //  fallingdown.item[nn].width,
-                           // fallingdown.item[nn].height
+                            fallingdown.item[nn].y,
+                            fallingdown.item[nn].width+40,
+                            fallingdown.item[nn].height+40
                            );
+            fallingdown.item[nn].s=fallingdown.item[nn].s+1;
+            if (fallingdown.item[nn].s==4) {
+                fallingdown.item[nn].s=0;
+                fallingdown.item[nn].h=(fallingdown.item[nn].h+1)%3;
+            };
         }
         if(fallingdown.item[nn].type ==7)
         {
             ctx.drawImage(item_money_Img,
+                            fallingdown.item[nn].s*70,
+                            fallingdown.item[nn].h*70,
+                            70,
+                            70,
                             fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
-                            fallingdown.item[nn].width,
-                            fallingdown.item[nn].height);
+                            fallingdown.item[nn].width+40,
+                            fallingdown.item[nn].height+40
+                           );
+            fallingdown.item[nn].s=fallingdown.item[nn].s+1;
+            if (fallingdown.item[nn].s==4) {
+                fallingdown.item[nn].s=0;
+                fallingdown.item[nn].h=(fallingdown.item[nn].h+1)%3;
+            };
         }
         //fallingdown.item[nn].status=(fallingdown.item[nn].status+1)%9;
 
