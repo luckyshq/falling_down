@@ -82,11 +82,11 @@ function draw_role(){
             var i = 4 - gesture.length;
             if(e.which == gesture[0]){
                
-                       if(gesture[i] == 37)
+                       if(gesture[0] == 37)
                            ctx_innergame.drawImage(left2_Img,20+i*90,20,50,50);
-                       else if(gesture[i] == 38)
+                       else if(gesture[0] == 38)
                            ctx_innergame.drawImage(up2_Img,20+i*90,20,50,50);
-                       else if(gesture[i] == 39)
+                       else if(gesture[0] == 39)
                            ctx_innergame.drawImage(right2_Img,20+i*90,20,50,50);
                        else 
                            ctx_innergame.drawImage(down2_Img,20+i*90,20,50,50);

@@ -5,7 +5,7 @@ function draw_bg () {
 
 	ctxBg.drawImage(bgImage,0,0,900,1600,0,bgy,360,640);
     ctxBg.drawImage(bgImage,0,0,900,1600,0,640+bgy,360,640);
-    bgy = bgy-0.5;
+    bgy = bgy-0.5*fallingdown.ctrl_speed;
     if (bgy<-640) {
         bgy=0;
     };

@@ -20,6 +20,7 @@ var up2_Img = new Image();
 var down2_Img = new Image();
 var left2_Img = new Image();
 var right2_Img = new Image();
+var fog_Img = new Image();
 var hAnimation;
 
 var Audio;
@@ -158,6 +159,7 @@ $(function init() {
     item_harmless_Img.src  = "images/harmless.png";
     sheldAmtImg.src="images/sheldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
+    fog_Img.src="images/fog.png";
 
     up_Img.src = "images/up.png";
     down_Img.src = "images/down.png";
