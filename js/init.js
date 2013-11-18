@@ -172,28 +172,79 @@ $(function init() {
     right2_Img.src = "images/right2.png";
 
     $$("#game").swipeLeft(function() {
-        role.direction = 1;
-        role.way = role.way-1;
-        if (role.way<0) {
+        if (g_status==1) {
+            var i = 4 - gesture.length;
+            if(gesture[0] == 37){
+                ctx_innergame.drawImage(left2_Img,20+i*90,20,50,50);
+                gesture.splice(0,1);
+            }
+            if(gesture.length == 0){
+                $("#innergame").removeClass('cameout');
+                $("#innergame").addClass('fadeout');
+                g_status = 0;
+            }           
+        }
+        else{
+            role.direction = 1;
+            role.way = role.way-1;
+            if (role.way<0) {
             role.way = 0;
+            };
+        }
+    });
+
+    $$("#game").swipeUp(function() {
+        if (g_status==1) {
+            var i = 4 - gesture.length;
+            if (gesture[0]==38) {
+                ctx_innergame.drawImage(up2_Img,20+i*90,20,50,50);
+                gesture.splice(0,1);
+            };
+        
+            if(gesture.length == 0){
+                $("#innergame").removeClass('cameout');
+                $("#innergame").addClass('fadeout');
+                g_status = 0;
+            }
+        };
+    });
+    
+    $$("#game").swipeRight(function() {
+        if (g_status==1) {
+            var i = 4 - gesture.length;
+            if (gesture[0]==39) {
+                ctx_innergame.drawImage(right2_Img,20+i*90,20,50,50);
+                gesture.splice(0,1);
+            }
+            if(gesture.length == 0){
+                $("#innergame").removeClass('cameout');
+                $("#innergame").addClass('fadeout');
+                g_status = 0;
+            }
+        } else{
+            role.direction = 2;
+            role.way = role.way + 1;
+            if (role.way>2) {
+                role.way = 2;
+            };
         };
     });
 
-    // $("#man").on("swipeleft",function() {
-    //     role.direction = 1;
-    //     role.way = role.way-1;
-    //     if (role.way<0) {
-    //         role.way = 0;
-    //     };
-    // });
-    
-    $$("#game").swipeRight(function() {
-        role.direction = 2;
-        role.way = role.way + 1;
-        if (role.way>2) {
-            role.way = 2;
+    $$("#game").swipeDown(function() {
+       if (g_status==1) {
+            var i = 4 - gesture.length;
+            if (gesture[0]==40) {
+                ctx_innergame.drawImage(up2_Img,20+i*90,20,50,50);
+                gesture.splice(0,1);
+            };
+        if(gesture.length == 0){
+                $("#innergame").removeClass('cameout');
+                $("#innergame").addClass('fadeout');
+                g_status = 0;
+            }
         };
     });
+
     $(".start").on("click",function() {
 //    	Animation.pause();
 //    	Audio.play();
