@@ -1,27 +1,27 @@
 var barrierArray = 
 [[0,0],[0,0],[0,0],
 [0,0],[0,0],[0,0],
-[9,0],[0,0],[0,0],
-[9,0],[1,4],[2,2],
-[9,0],[1,2],[0,0],
+[0,0],[0,0],[0,0],
+[10,2],[1,4],[2,2],
+[7,0],[1,2],[0,0],
 [8,0],[1,2],[0,0],
-[8,0],[1,2],[1,2],
-[8,2],[1,2],[1,4],
-[8,0],[0,0],[1,2],
-[8,0],[1,4],[0,0],
-[0,0],[7,0],[1,2],
-[0,0],[1,4],[1,0],
-[3,2],[7,0],[1,2],
+[9,0],[1,2],[1,2],
+[1,2],[1,2],[1,4],
+[0,0],[0,0],[1,2],
+[10,2],[1,4],[0,0],
+[7,0],[0,0],[1,2],
+[7,0],[1,4],[1,0],
+[3,2],[0,0],[1,2],
 [1,2],[1,2],[0,0],
-[1,6],[1,6],[0,0],
+[1,6],[1,6],[10,2],
 [0,0],[1,6],[1,6],
-[1,6],[1,6],[0,0],
-[0,0],[1,6],[1,6],
-[1,6],[1,6],[0,0],
-[0,0],[1,6],[1,6],
-[1,4],[0,0],[1,4],
+[1,6],[1,6],[7,0],
+[7,0],[1,6],[1,6],
+[1,6],[1,6],[7,0],
+[7,0],[1,6],[1,6],
+[1,4],[7,0],[1,4],
 [0,0],[1,2],[2,2],
-[1,2],[0,0],[0,0],
+[1,2],[7,0],[0,0],
 [1,4],[0,0],[0,0],
 [0,0],[1,4],[1,4],
 [1,2],[0,0],[1,4]];
@@ -35,7 +35,7 @@ function barrier(kind,x,y,width,height,way,speed,status){
     this.way = way;
     this.speed = speed;
     this.status = status;
-    this.type = 0;           //0 stands for fatal barrier
+    //this.type = type;           //0 stands for fatal barrier
 }
 
 
@@ -50,10 +50,13 @@ function createBarrier(){
         }else if(barrierArray[fallingdown.b_count][0] == 1){
             fallingdown.barrier.push(new barrier(1,120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
         }else if(barrierArray[fallingdown.b_count][0] == 2){
-            fallingdown.barrier.push(new barrier(2,120*i+50,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
+            fallingdown.barrier.push(new barrier(2,120*i+120,500,70,70,i,barrierArray[fallingdown.b_count][1],0));
 
         }else if(barrierArray[fallingdown.b_count][0] == 3){
-            fallingdown.barrier.push(new barrier(3,120*i,410,70,70,i,barrierArray[fallingdown.b_count][1],0));
+            fallingdown.barrier.push(new barrier(3,120*i-70,500,70,70,i,barrierArray[fallingdown.b_count][1],0));
+
+        }else if(barrierArray[fallingdown.b_count][0] == 10){
+            fallingdown.barrier.push(new barrier(10,120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
 
         }else if(barrierArray[fallingdown.b_count][0] == 7)
         {
@@ -95,8 +98,8 @@ function draw_barrier () {
         fallingdown.barrier[nn].height);
        };
        fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%9;
-
        fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed * fallingdown.ctrl_speed;
+     
        if(fallingdown.barrier[nn].kind==2){
             fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;
             if (fallingdown.barrier[nn].status==8) {
@@ -132,7 +135,20 @@ function draw_barrier () {
             fallingdown.barrier[nn].width,
             fallingdown.barrier[nn].height);
        }
-
+       if (fallingdown.barrier[nn].kind==10) {
+       ctx.drawImage(fog_Img,
+       // fallingdown.barrier[nn].status*180,
+       // 0,
+        // fallingdown.barrier[nn].width,
+        // fallingdown.barrier[nn].height,
+       // 180,
+       // 180,
+        fallingdown.barrier[nn].x,
+        fallingdown.barrier[nn].y
+       // fallingdown.barrier[nn].width,
+       // fallingdown.barrier[nn].height
+       );
+       };
         if (fallingdown.barrier[nn].y < 0) {
             fallingdown.barrier.splice(nn,1);
         }else{

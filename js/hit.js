@@ -19,19 +19,18 @@ function check_role()
                 //hit_div.setAttribute("display","block");
                 //hit_div.style.display="inline-block";
                 //document.write("<p>hit</p>");
-                    if(fallingdown.barrier[nn].type == 0) 
+                    if(fallingdown.barrier[nn].kind == 1||fallingdown.barrier[nn].kind == 2||fallingdown.barrier[nn].kind == 3) 
                     {
                             fallingdown.barrier.splice(nn,1);
                             hh--;
                             check_sheld();
                     }
-                    else if(fallingdown.barrier[nn].type == 1){
+                    else if(fallingdown.barrier[nn].kind == 10){
                         fallingdown.barrier.splice(nn,1);
                          hh--;
                          innergame();
                     }
-                    else
-                        change_life();
+                   
 
                     //if (role.sheld == 0) add_sheld();
 
