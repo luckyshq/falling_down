@@ -10,10 +10,10 @@
 
 function item(type)
 {
-    this.x=0 ;
+    this.x=20 ;
     this.y=640;
-    this.width=70;
-    this.height=70;
+    this.width=53;
+    this.height=53;
     this.way= 0;
     this.status=0;
     this.speed=4;
