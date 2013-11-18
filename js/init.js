@@ -55,7 +55,7 @@ var fallingdown = {
     total_money:0
 };
 
-var unit = 20;
+var unit = 10;
 
 function draw_text () {
     ctx.font = "26px Arial";
@@ -171,7 +171,7 @@ $(function init() {
     left2_Img.src = "images/left2.png";
     right2_Img.src = "images/right2.png";
 
-    $$("#man").swipeLeft(function() {
+    $$("#game").swipeLeft(function() {
         role.direction = 1;
         role.way = role.way-1;
         if (role.way<0) {
@@ -187,7 +187,7 @@ $(function init() {
     //     };
     // });
     
-    $$("#man").swipeRight(function() {
+    $$("#game").swipeRight(function() {
         role.direction = 2;
         role.way = role.way + 1;
         if (role.way>2) {

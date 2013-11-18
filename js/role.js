@@ -45,25 +45,24 @@ function draw_role(){
     ctx.strokeStyle="rgb(0,0,0)";  
     ctx.beginPath();  
     ctx.strokeRect(box.x,box.y,box.width,box.height);    
-    // var img=new Image();  
-    // img.src="images/man.png"; 
-    // if (role.direction!=0) {
-    // 	move_role();  	
-    // }
 
-    // ctx.drawImage(img,role.status*role.width,role.direction*role.height,
-    //         role.width,role.height,role.x,role.y,role.width,role.height);       
-    
-    // role.status=(role.status+1)%3; 
-
-     
     if (role.direction!=0) {
-        move_role();    
+    	move_role();  	
     }
 
-    ctx.drawImage(img,role.status*role.width,0,
+    ctx.drawImage(img,role.status*role.width,role.direction*role.height,
             role.width,role.height,role.x,role.y,role.width,role.height);       
-    role.status=(role.status+1)%6;
+    
+    role.status=(role.status+1)%6; 
+
+     
+    // if (role.direction!=0) {
+    //     move_role();    
+    // }
+
+    // ctx.drawImage(img,role.status*role.width,0,
+    //         role.width,role.height,role.x,role.y,role.width,role.height);       
+    // role.status=(role.status+1)%6;
 
     if (role.sheld==1) {
         ctx.drawImage(sheldAmtImg,sheldAmt.s*sheldAmt.width,

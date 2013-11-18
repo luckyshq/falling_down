@@ -106,12 +106,12 @@ function draw_barrier () {
                 fallingdown.barrier[nn].status==0;
             };
             ctx.drawImage(barrierDraImg,
-            fallingdown.barrier[nn].status*200,
-            251*2,
+            fallingdown.barrier[nn].status*225,
+            249*2,
         // fallingdown.barrier[nn].width,
         // fallingdown.barrier[nn].height,
-            200,
-            251,
+            225,
+            249,
             fallingdown.barrier[nn].x,
             fallingdown.barrier[nn].y,
             fallingdown.barrier[nn].width,
@@ -124,12 +124,12 @@ function draw_barrier () {
                 fallingdown.barrier[nn].status==0;
             };
             ctx.drawImage(barrierDraImg,
-            fallingdown.barrier[nn].status*200,
-            251,
+            fallingdown.barrier[nn].status*225,
+            249,
         // fallingdown.barrier[nn].width,
         // fallingdown.barrier[nn].height,
-            200,
-            251,
+            225,
+            249,
             fallingdown.barrier[nn].x,
             fallingdown.barrier[nn].y,
             fallingdown.barrier[nn].width,
