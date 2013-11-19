@@ -161,8 +161,8 @@ div.ui-slider-switch {
 			<ul data-role="listview" data-divider-theme="b" data-inset="true">
 				<li data-role="list-divider" role="heading">背景音乐</li>
 				<li data-role="fieldcontain"><label for="developer-mode-slider">
-						开启 </label> <select id="time-slider" data-role="slider"
-					name="time-slider">
+						开启 </label> <select id="sound-slider" data-role="slider"
+					name="sound-slider">
 						<option value="off">off</option>	
 						<option value="on">on</option>		
 				</select></li>
@@ -175,9 +175,16 @@ div.ui-slider-switch {
 				<li data-role="list-divider" role="heading">VOLUME</li>
 				<input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
 			</ul>
-    </div>
-    
+    </div>    
         <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">back</a>
+        
+         <div data-role="content">   
+    	<div data-role="collapsible" data-state="collapsed">   
+     	<h3>info</h3>   
+    	  <h3>About this version：坠梦空间 V1.0</h3> 
+    	  <h3>制作：XXX团队</h3> 
+   		</div>   
+ 		 </div> 
 </div>	 
     
     <script>
