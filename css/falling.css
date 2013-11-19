@@ -1,15 +1,4 @@
-#au{
-       color:black;
-       text-align:center;
-   }
-   
-#progressBar { 
-      border:10px solid #aaa; 
-      color:#000000; 
-   	width:document.body.clientWidth; 
-  	height:250px;
-   }
-   
+
 #hit{
 	width:200px;
 	height:110px;

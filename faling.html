@@ -20,6 +20,18 @@
 
 <link href="css/falling.css" rel="stylesheet" type="text/css" />
 
+<style>
+.ui-li .ui-btn-inner a.ui-link-inherit,.ui-li-static.ui-li {
+	display: block !important;
+	padding: 0em 75px 0.9em 15px !important;
+}
+
+div.ui-slider-switch {
+	position: absolute !important;
+	right: 0 !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -123,7 +135,7 @@
     	<br>   
     	<h3>Your Score:<span id="finalPoint"></span></h3>   	    	     	
     	<h2>排行榜</h2>
-    	<h4><span id="rating"></h4>
+    	<h3><span id="rating"></h3>
     	
     </div>
     
@@ -142,22 +154,36 @@
         <h1>Option</h1>
     </div>
     <div data-role="content">   
+     <!--in order to turn on the volume-->
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+				<li data-role="list-divider" role="heading">音量调节</li>
+				<li data-role="fieldcontain"><label for="developer-mode-slider">
+						开启 </label> <select id="time-slider" data-role="slider"
+					name="time-slider">
+						<option value="off">off</option>	
+						<option value="on">on</option>		
+				</select></li>
+			</ul>
+    </div>
+    
+    <div data-role="content">   
      <!--in order to turn in the volume-->
-        <div id="progressBar">
-    	   <div id="au"><h1>VOLUME</h1></div>
-    	   <input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
-        </div>
-        
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+				<li data-role="list-divider" role="heading">VOLUME</li>
+				<input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
+			</ul>
+    </div>
+    
         <a href="#welcome" data-role="button" data-theme="b">back</a>
-    </div>	 
+</div>	 
+    
     <script>
     	function setVolume() {
  		  var volume = document.getElementById("volume");
   		 audio.volume = volume.value;
 		}
-
 	</script>
-    
-</div>
+
+
 </body>
 </html>
