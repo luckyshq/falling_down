@@ -26,6 +26,10 @@ var hAnimation;
 var Audio;
 //var Animation;//The start animation;
 
+var storage = window.localStorage;
+var score=[0,0,0,0,0,0,0,0,0,0];
+
+
 var gesture = [];
 var g_status = 0;
 //box 
@@ -72,10 +76,37 @@ function draw_money()
     ctx.fillText("Money:"+fallingdown.total_money,350,30);
 }
 
+function Storage_Point(point)
+{
+	 var data=storage.key1;
+	 var rating=null;
+    score=data.split('|'); 
+    var i,j;
+    for (i = 0; i < score.length; i++)
+    {
+
+        if (fallingdown.finalPoint > score[i])
+       {
+       		for(j=score.length-1;j>i;j--)
+       		score[j]=score[j-1];
+          score[i]=fallingdown.finalPoint;
+          storage.setItem('key1',score[0]+'|'+score[1]+'|'+score[2]+'|'+score[3]+'|'+score[4]+'|'+score[5]+'|'+score[6]+'|'+score[7]+'|'+score[8]+'|'+score[9]);
+          break;
+        }
+    }
+     for (i = 1; i <= score.length; i++)
+    {
+    	rating=rating+i+' --------------------------------------------------------- '+score[i-1]+'<br>';
+    }
+    
+      $("#rating").html(rating);
+}
+
 function gameOver(){
     var hit_div = document.getElementById("hit");
     hit_div.style.display="none";
     fallingdown.finalPoint = fallingdown.point;
+    Storage_Point(fallingdown.finalPoint);
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
     fallingdown.point = 0;
@@ -148,6 +179,8 @@ $(function init() {
   	 Audio=document.getElementById("audio");
      Animation=document.getElementById("animation");
   
+  	if(storage.key1==null)
+  	storage.setItem('key1','0|0|0|0|0|0|0|0|0|0');
 
     img.src="images/role.png";
     leftRoleImg = "images/role_left.png";

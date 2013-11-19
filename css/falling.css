@@ -2,12 +2,14 @@
        color:black;
        text-align:center;
    }
+   
 #progressBar { 
       border:10px solid #aaa; 
       color:#000000; 
    	width:document.body.clientWidth; 
   	height:250px;
    }
+   
 #hit{
 	width:200px;
 	height:110px;
@@ -29,7 +31,6 @@
     top: hit.top-input1.height;
 	background:url("images/button_normal.png");
 	
-  
 }
 
 .input2{
@@ -42,7 +43,6 @@
     left: 115px;
     top: hit.top-input2.height;
 	background:url("images/button_normal.png");
-	
 }
 
 
