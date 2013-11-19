@@ -64,8 +64,8 @@ div.ui-slider-switch {
         <h1>welcome</h1>
     </div>
     <div data-role="content">
-        <a class="start" href="#game" data-role="button" data-theme="b">Start</a>
-        <a class="option" href="#option" data-role="button" data-theme="b">Option</a>
+        <a class="start" href="#game" data-transition="flip" data-role="button" data-theme="b">Start</a>
+        <a class="option" href="#option" data-transition="slide" data-role="button" data-theme="b">Option</a>
     </div>
 
 </div>
@@ -143,8 +143,8 @@ div.ui-slider-switch {
     </div>
     
     <div data-role="content">  
-        <a class="start" href="#game" data-role="button" data-theme="b">restart</a>
-        <a href="#welcome" data-role="button" data-theme="b">MENU</a>
+        <a class="start" href="#game" data-transition="flip" data-role="button" data-theme="b">restart</a>
+        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">MENU</a>
         <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;"></a>
     	<div id="point">
 
@@ -159,7 +159,7 @@ div.ui-slider-switch {
     <div data-role="content">   
      <!--in order to turn on the volume-->
 			<ul data-role="listview" data-divider-theme="b" data-inset="true">
-				<li data-role="list-divider" role="heading">音量调节</li>
+				<li data-role="list-divider" role="heading">背景音乐</li>
 				<li data-role="fieldcontain"><label for="developer-mode-slider">
 						开启 </label> <select id="time-slider" data-role="slider"
 					name="time-slider">
@@ -177,7 +177,7 @@ div.ui-slider-switch {
 			</ul>
     </div>
     
-        <a href="#welcome" data-role="button" data-theme="b">back</a>
+        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">back</a>
 </div>	 
     
     <script>
