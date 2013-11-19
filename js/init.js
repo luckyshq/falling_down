@@ -56,7 +56,8 @@ var fallingdown = {
     ctrl_speed: 1,  //control the speed of every barrier
     point  : 0 ,
     finalPoint:0,
-    total_money:0
+    total_money:0,
+    b_countofarray:0
 };
 
 var unit = 10;

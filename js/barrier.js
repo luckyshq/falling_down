@@ -1,30 +1,130 @@
 var barrierArray = 
-[[0,0],[0,0],[0,0],
-[0,0],[0,0],[0,0],
-[0,0],[0,0],[0,0],
-[10,2],[1,4],[2,2],
-[7,0],[1,2],[0,0],
-[8,0],[1,2],[0,0],
-[9,0],[1,2],[1,2],
-[1,2],[1,2],[1,4],
+[[[3,2],[0,0],[2,2],
+[1,4],[0,0],[1,2],
+[3,2],[1,2],[2,2],
+[3,2],[0,0],[2,2],
+[1,4],[1,2],[0,0],
+[0,0],[0,0],[2,2],
+[1,6],[1,2],[1,2],
+[3,2],[7,0],[2,2],
+[3,2],[7,0],[0,0],
+[1,4],[1,2],[1,6],
+[0,7],[1,6],[1,2],
+[0,7],[0,0],[1,4],
+[1,5],[7,0],[1,4],
+[3,2],[7,0],[1,4],
+[0,7],[1,4],[2,2],
+[1,3],[0,0],[1,6],
+[1,6],[0,0],[0,0],
+[1,6],[1,6],[0,0],
+[1,2],[7,0],[2,2],
+[0,0],[7,0],[1,4],
+[3,4],[7,0],[2,4],
+[0,0],[1,2],[7,0],
+[1,4],[7,0],[2,2],
+[0,0],[7,0],[0,0]],
+
+
+[[1,2],[0,0],[0,0],
+[0,0],[0,0],[1,4],
+[0,0],[1,2],[1,4],
+[3,2],[0,0],[2,2],
+[1,4],[1,2],[0,0],
+[0,0],[0,0],[2,2],
+[1,6],[1,2],[1,2],
+[0,0],[0,0],[2,2],
+[1,4],[0,0],[0,0],
+[1,4],[1,2],[1,6],
+[0,0],[1,6],[1,2],
+[0,0],[0,0],[1,4],
+[1,5],[0,0],[1,4],
+[0,0],[0,0],[1,4],
+[0,0],[1,4],[0,0],
+[0,0],[0,0],[1,6],
+[1,6],[0,0],[0,0],
+[1,6],[1,6],[0,0],
+[1,2],[0,0],[1,2],
+[1,4],[0,0],[1,4],
 [0,0],[0,0],[1,2],
-[10,2],[1,4],[0,0],
+[0,0],[1,2],[0,0],
+[1,4],[0,0],[2,2],
+[1,2],[0,0],[1,2]],
+
+
+ [[0,0],[0,0],[1,2],
+[1,4],[0,0],[0,0],
+[1,4],[1,2],[0,0],
+[3,2],[0,0],[2,2],
+[0,0],[1,2],[1,4],
+[3,2],[0,0],[0,0],
+[1,2],[1,2],[1,6],
+[3,2],[0,0],[0,0],
+[0,0],[0,0],[1,4],
+[1,6],[1,2],[1,4],
+[1,2],[1,6],[0,0],
+[1,4],[0,0],[0,0],
+[1,4],[0,0],[1,5],
+[1,4],[0,0],[0,0],
+[0,0],[1,4],[0,0],
+[1,6],[0,0],[0,0],
+[0,0],[0,0],[1,6],
+[0,0],[1,6],[1,6],
+[1,2],[0,0],[1,2],
+[1,4],[0,0],[1,4],
+[1,2],[0,0],[0,0],
+[0,0],[1,2],[0,0],
+[3,2],[0,0],[1,4],
+[1,2],[0,0],[1,2]],
+
+[[7,0],[1,4],[2,2],
+[7,0],[1,4],[1,2],
+[7,0],[1,2],[0,0],
+[7,0],[1,2],[2,2],
+[3,2],[1,2],[0,0],
+[1,2],[1,2],[0,0],
+[7,0],[0,0],[1,2],
+[7,0],[1,4],[0,0],
+[7,0],[0,0],[1,2],
+[7,0],[1,4],[1,0],
+[1,2],[0,0],[1,2],
+[1,2],[1,2],[0,0],
+[1,4],[1,4],[0,0],
+[0,0],[1,6],[1,6],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,3],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,4],[0,0],[2,4],
+[0,0],[1,2],[1,2],
+[1,2],[0,0],[0,0],
+[1,4],[0,0],[0,0],
+[0,0],[1,4],[1,4],
+[1,2],[0,0],[1,4]],
+
+[[1,2],[1,4],[0,0],
+[7,0],[1,4],[2,2],
+[7,0],[1,2],[0,0],
+[7,0],[1,2],[0,0],
+[7,0],[1,2],[1,2],
+[1,2],[1,2],[1,4],
+[7,0],[0,0],[1,2],
+[7,0],[1,4],[0,0],
 [7,0],[0,0],[1,2],
 [7,0],[1,4],[1,0],
 [3,2],[0,0],[1,2],
 [1,2],[1,2],[0,0],
-[1,6],[1,6],[10,2],
+[1,6],[1,6],[0,0],
 [0,0],[1,6],[1,6],
-[1,6],[1,6],[7,0],
-[7,0],[1,6],[1,6],
-[1,6],[1,6],[7,0],
-[7,0],[1,6],[1,6],
-[1,4],[7,0],[1,4],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,6],[1,6],[0,0],
+[0,0],[1,6],[1,6],
+[1,4],[0,0],[1,4],
 [0,0],[1,2],[2,2],
-[1,2],[7,0],[0,0],
+[1,2],[0,0],[0,0],
 [1,4],[0,0],[0,0],
 [0,0],[1,4],[1,4],
-[1,2],[0,0],[1,4]];
+[1,2],[0,0],[1,4]]];
 
 function barrier(kind,x,y,width,height,way,speed,status){
     this.kind = kind;
@@ -40,35 +140,69 @@ function barrier(kind,x,y,width,height,way,speed,status){
 
 
 function createBarrier(){
-    if(fallingdown.b_count == 26*3){
+    if(fallingdown.b_count == 24*3){
         fallingdown.b_count = 0;
+        fallingdown.b_countofarray = parseInt(5*Math.random());
     }
+    if(fallingdown.b_count == 24*3){
+        fallingdown.b_count = 0;
+        fallingdown.b_countofarray = parseInt(5*Math.random());
+    }
+    if(fallingdown.b_countofarray == 4){
+        fallingdown.b_count += 2;
+        var temp = parseInt(2*Math.random()); //1or2
+  
+        var t_speed = parseInt(2*Math.random());//2.5or3
+        
+        if(t_speed == 0)
+            t_speed = 2.5;
+        else 
+            t_speed = 3;
+        
+        var t_way = parseInt(3*Math.random());//which way
+        if(temp == 0)
+            fallingdown.barrier.push(new barrier(1,120*t_way+25,640,70,70,t_way,t_speed,0));
+        else{
+            var t_way2 = parseInt(3*Math.random());
+            if(t_way2 == t_way)
+                t_way2 = parseInt(3*Math.random());
+            fallingdown.barrier.push(new barrier(1,120*t_way+25,640,70,70,t_way,t_speed,0));
+
+            t_speed = parseInt(2*Math.random());//2.5or3
+            if(t_speed == 0)
+                t_speed = 2.5;
+            else 
+                t_speed = 3;
+            fallingdown.barrier.push(new barrier(1,120*t_way2+25,640,70,70,t_way2,t_speed,0));
+        }
+    }
+    else
     for(var i = 0; i<3; i++ ,fallingdown.b_count++)
     {
-        if(barrierArray[fallingdown.b_count][0] == 0){
+        if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 0){
            // continue;
-        }else if(barrierArray[fallingdown.b_count][0] == 1){
-            fallingdown.barrier.push(new barrier(1,120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
-        }else if(barrierArray[fallingdown.b_count][0] == 2){
-            fallingdown.barrier.push(new barrier(2,120*i+120,500,70,70,i,barrierArray[fallingdown.b_count][1],0));
+        }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 1){
+            fallingdown.barrier.push(new barrier(1,120*i+25,640,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
+        }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 2){
+            fallingdown.barrier.push(new barrier(2,120*i+120,500,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
 
-        }else if(barrierArray[fallingdown.b_count][0] == 3){
-            fallingdown.barrier.push(new barrier(3,120*i-70,500,70,70,i,barrierArray[fallingdown.b_count][1],0));
+        }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 3){
+            fallingdown.barrier.push(new barrier(3,120*i-70,500,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
 
-        }else if(barrierArray[fallingdown.b_count][0] == 10){
-            fallingdown.barrier.push(new barrier(10,120*i+25,640,70,70,i,barrierArray[fallingdown.b_count][1],0));
+        }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 10){
+            fallingdown.barrier.push(new barrier(10,120*i+25,640,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
 
-        }else if(barrierArray[fallingdown.b_count][0] == 7)
+        }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 7)
         {
             fallingdown.item.push(new item(7));
 
         }
-        else if(barrierArray[fallingdown.b_count][0] == 8)  
+        else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 8)  
         {
             fallingdown.item.push(new item(8));
 
         }
-        else if(barrierArray[fallingdown.b_count][0] == 9)  //a sheld is created
+        else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 9)  //a sheld is created
         {
             fallingdown.item.push(new item(9));
 
