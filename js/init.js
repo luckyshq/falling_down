@@ -79,7 +79,7 @@ function draw_money()
 function Storage_Point(point)
 {
 	 var data=storage.key1;
-	 var rating=null;
+	 var ranking='<h3><tr><th>排名</th>  <th>ID</th> <th>得分</th> </tr>';
     score=data.split('|'); 
     var i,j;
     for (i = 0; i < score.length; i++)
@@ -96,10 +96,10 @@ function Storage_Point(point)
     }
      for (i = 1; i <= score.length; i++)
     {
-    	rating=rating+i+' --------------------------------------------------------- '+score[i-1]+'<br>';
+    	ranking=ranking+'<tr><th>'+i+'</th>  <th>yunos</th> <th>'+score[i-1]+'</th> </tr>';
     }
-    
-      $("#rating").html(rating);
+    ranking=ranking+'</h3>';
+      $("#ranking").html(ranking);
 }
 
 function gameOver(){
