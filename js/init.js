@@ -22,7 +22,7 @@ var left2_Img = new Image();
 var right2_Img = new Image();
 var fog_Img = new Image();
 var hAnimation;
-
+var startTime;
 var Audio;
 //var Animation;//The start animation;
 
@@ -128,7 +128,7 @@ function gameOver(){
     window.cancelAnimationFrame(hAnimation);
 }
 
-function gameloop(time){
+function gameloop(time){   
     if(g_status == 0){
     fallingdown.g_count++;
     fallingdown.g_count %= 100 / fallingdown.ctrl_speed;
@@ -157,13 +157,18 @@ function gameloop(time){
     if(role.dead==1)
         return;
     }
+
     hAnimation=window.requestAnimationFrame(gameloop);
 
 }
 
 function initGame () {
     role.dead=0;
+    startTime=Date.now();
     gameloop(Date.now);
+
+
+
 }
     
 

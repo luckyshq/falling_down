@@ -184,10 +184,10 @@ function createBarrier(){
         }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 1){
             fallingdown.barrier.push(new barrier(1,120*i+25,640,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
         }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 2){
-            fallingdown.barrier.push(new barrier(2,120*i+120,500,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
+            fallingdown.barrier.push(new barrier(2,120*i+120,500,70,77,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
 
         }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 3){
-            fallingdown.barrier.push(new barrier(3,120*i-70,500,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
+            fallingdown.barrier.push(new barrier(3,120*i-70,500,70,77,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
 
         }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 10){
             fallingdown.barrier.push(new barrier(10,120*i+25,640,70,70,i,barrierArray[fallingdown.b_countofarray][fallingdown.b_count][1],0));
@@ -219,33 +219,29 @@ function draw_barrier () {
 
        //ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
        if (fallingdown.barrier[nn].kind==1) {
+        if (fallingdown.barrier[nn].status==7) {
+                fallingdown.barrier[nn].status==0;
+            };
        ctx.drawImage(barrierImg,
-        fallingdown.barrier[nn].status*180,
+        fallingdown.barrier[nn].status*70,
         0,
-        // fallingdown.barrier[nn].width,
-        // fallingdown.barrier[nn].height,
-        180,
-        180,
+        70,
+        70,
         fallingdown.barrier[nn].x,
         fallingdown.barrier[nn].y,
         fallingdown.barrier[nn].width,
         fallingdown.barrier[nn].height);
        };
-       fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%9;
+       fallingdown.barrier[nn].status=(fallingdown.barrier[nn].status+1)%8;
        fallingdown.barrier[nn].y = fallingdown.barrier[nn].y - fallingdown.barrier[nn].speed * fallingdown.ctrl_speed;
      
        if(fallingdown.barrier[nn].kind==2){
-            fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;
-            if (fallingdown.barrier[nn].status==8) {
-                fallingdown.barrier[nn].status==0;
-            };
+            fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;          
             ctx.drawImage(barrierDraImg,
-            fallingdown.barrier[nn].status*225,
-            249*2,
-        // fallingdown.barrier[nn].width,
-        // fallingdown.barrier[nn].height,
-            225,
-            249,
+            fallingdown.barrier[nn].status*70,
+            154,
+            70,
+            77,
             fallingdown.barrier[nn].x,
             fallingdown.barrier[nn].y,
             fallingdown.barrier[nn].width,
@@ -254,16 +250,11 @@ function draw_barrier () {
 
        if(fallingdown.barrier[nn].kind==3){
             fallingdown.barrier[nn].x = fallingdown.barrier[nn].x + 2;
-            if (fallingdown.barrier[nn].status==8) {
-                fallingdown.barrier[nn].status==0;
-            };
             ctx.drawImage(barrierDraImg,
-            fallingdown.barrier[nn].status*225,
-            249,
-        // fallingdown.barrier[nn].width,
-        // fallingdown.barrier[nn].height,
-            225,
-            249,
+            fallingdown.barrier[nn].status*70,
+            77,
+            70,
+            77,
             fallingdown.barrier[nn].x,
             fallingdown.barrier[nn].y,
             fallingdown.barrier[nn].width,

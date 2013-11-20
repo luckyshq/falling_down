@@ -45,8 +45,8 @@ function draw_item()
                             70,
                             fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
-                            fallingdown.item[nn].width+40,
-                            fallingdown.item[nn].height+40
+                            fallingdown.item[nn].width+60,
+                            fallingdown.item[nn].height+60
                            );
             fallingdown.item[nn].s=fallingdown.item[nn].s+1;
             if (fallingdown.item[nn].s==4) {
