@@ -2,8 +2,8 @@
 var role = {
 	x:135,
 	y:250,
-	width:87,
-	height:107,
+	width:100,
+	height:100,
 	status:0,
 	direction:0,
     way:1,
