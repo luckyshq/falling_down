@@ -220,7 +220,7 @@ function draw_barrier () {
        //ctx.fillRect(fallingdown.barrier[nn].x,fallingdown.barrier[nn].y,fallingdown.barrier[nn].width,fallingdown.barrier[nn].height);
        if (fallingdown.barrier[nn].kind==1) {
         if (fallingdown.barrier[nn].status==7) {
-                fallingdown.barrier[nn].status==0;
+                fallingdown.barrier[nn].status=0;
             };
        ctx.drawImage(barrierImg,
         fallingdown.barrier[nn].status*70,

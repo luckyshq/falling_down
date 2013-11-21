@@ -60,7 +60,7 @@ var fallingdown = {
     b_countofarray:0
 };
 
-var unit = 10;
+var unit = 7;
 
 function draw_text () {
     ctx.font = "26px Arial";
@@ -113,6 +113,8 @@ function gameOver(){
     fallingdown.point = 0;
     fallingdown.g_count = 0;
     fallingdown.b_count = 0;
+    fallingdown.total_money=0;
+
     gesture = [];
     g_status = 0;
     role.x = 135;
@@ -129,6 +131,8 @@ function gameOver(){
 }
 
 function gameloop(time){   
+    if (time-startTime>15) {
+    startTime=time;
     if(g_status == 0){
     fallingdown.g_count++;
     fallingdown.g_count %= 100 / fallingdown.ctrl_speed;
@@ -142,9 +146,8 @@ function gameloop(time){
     // };
     // }
     fallingdown.point = fallingdown.point+12;
-    draw_bg();
+    draw_bg(); 
     draw_role();
-    
     if(fallingdown.g_count == 1){
         createBarrier();
     }
@@ -157,14 +160,14 @@ function gameloop(time){
     if(role.dead==1)
         return;
     }
-
+    };
     hAnimation=window.requestAnimationFrame(gameloop);
 
 }
 
 function initGame () {
     role.dead=0;
-    startTime=Date.now();
+    startTime=0;
     gameloop(Date.now);
 
 

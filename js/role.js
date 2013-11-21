@@ -8,6 +8,7 @@ var role = {
 	direction:0,
     way:1,
 
+    diamond:100,          //num of diamond ,can relife
     sheld:1,          //1 role has a sheld
     harmless:0,       //0 role is not harmless
     dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 

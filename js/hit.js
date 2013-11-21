@@ -136,13 +136,18 @@ function dead()
 {
     role.dead=1;
     pauseGame();
+    if (role.diamond>0) {
     hit_div.style.display="inline-block";
+    }else{
+        gameOver();
+    }
     //user choose to live or not
     //gameOver();
 }
 
 function reLife () {
     role.dead = 0;
+    role.diamond=role.diamond-1;
     hit_div.style.display="none";
     continueGame();
 }
