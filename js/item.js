@@ -86,8 +86,8 @@ function draw_item()
 var sheldAmt={
     x:0,
     y:0,
-    width:192,
-    height:192,
+    width:150,
+    height:150,
     s:0,
     h:0
 }

@@ -199,7 +199,7 @@ $(function init() {
     item_sheld_Img.src="images/shield.png";
     item_money_Img.src = "images/money.png";
     item_harmless_Img.src  = "images/harmless.png";
-    sheldAmtImg.src="images/sheldAmt.png";
+    sheldAmtImg.src="images/shieldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
     fog_Img.src="images/fog.png";
 

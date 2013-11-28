@@ -42,10 +42,10 @@ function move_role () {
 function draw_role(){
 	
     
-    ctx.lineWidth="5";  
-    ctx.strokeStyle="rgb(0,0,0)";  
-    ctx.beginPath();  
-    ctx.strokeRect(box.x,box.y,box.width,box.height);    
+    // ctx.lineWidth="5";  
+    // ctx.strokeStyle="rgb(0,0,0)";  
+    // ctx.beginPath();  
+    // ctx.strokeRect(box.x,box.y,box.width,box.height);    
 
     if (role.direction!=0) {
     	move_role();  	
@@ -68,11 +68,11 @@ function draw_role(){
     if (role.sheld==1) {
         ctx.drawImage(sheldAmtImg,sheldAmt.s*sheldAmt.width,
             sheldAmt.h*sheldAmt.height,sheldAmt.width,sheldAmt.height,
-            role.x-35,role.y-20,role.width+60,role.height+50);
+            role.x-25,role.y-25,role.width+80,role.height+70);
         sheldAmt.s=sheldAmt.s+1;
-        if (sheldAmt.s==5) {
+        if (sheldAmt.s==4) {
             sheldAmt.s=0;
-            sheldAmt.h=(sheldAmt.h=sheldAmt.h+1)%4;
+            sheldAmt.h=(sheldAmt.h=sheldAmt.h+1)%3;
         };
     }; 
 }
