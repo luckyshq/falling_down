@@ -202,7 +202,7 @@ function createBarrier(){
             fallingdown.item.push(new item(8));
 
         }
-        else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 9)  //a sheld is created
+        else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 9)  //a shield is created
         {
             fallingdown.item.push(new item(9));
 

@@ -2,13 +2,14 @@ var canvas;
 var ctx;
 var canvas_inner;
 var ctx_innergame;
+
 var img=new Image(); 
 var barrierImg=new Image();
 var bgImage=new Image();
-var item_sheld_Img = new Image();
+var item_shield_Img = new Image();
 var item_money_Img = new Image();
 var item_harmless_Img = new Image();
-var sheldAmtImg = new Image();
+var shieldAmtImg = new Image();
 var barrierDraImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
@@ -103,11 +104,21 @@ function Storage_Point(point)
       $("#ranking").html(ranking);
 }
 
+function Storage_Money (money) {
+    if (localStorage.money) {
+        localStorage.money=Number(localStorage.money)+money;
+    }else{
+        localStorage.money=money;
+    }
+}
+
+
 function gameOver(){
     var hit_div = document.getElementById("hit");
     hit_div.style.display="none";
     fallingdown.finalPoint = fallingdown.point;
     Storage_Point(fallingdown.finalPoint);
+    Storage_Money(fallingdown.total_money);
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
     fallingdown.point = 0;
@@ -168,6 +179,21 @@ function gameloop(time){
 function initGame () {
     role.dead=0;
     startTime=0;
+
+    if(localStorage.shieldTime)
+        role.shieldTime=localStorage.shieldTime;
+    else{
+        localStorage.shieldTime=10000;
+        role.shieldTime = Number(localStorage.shieldTime);
+    }
+
+    if(localStorage.harmlessTime)
+        role.harmlessTime=localStorage.harmlessTime;
+    else{
+        localStorage.harmlessTime=5000;
+        role.harmlessTime = Number(localStorage.harmlessTime);
+    }
+
     gameloop(Date.now);
 
 
@@ -189,17 +215,17 @@ $(function init() {
      Animation=document.getElementById("animation");
   
   	if(storage.key1==null)
-  	storage.setItem('key1','0|0|0|0|0|0|0|0|0|0');
+  	     storage.setItem('key1','0|0|0|0|0|0|0|0|0|0');
 
     img.src="images/role.png";
     leftRoleImg = "images/role_left.png";
     rightRoleImg = "images/role_right.png";
     barrierImg.src="images/barrier1.png";
     bgImage.src="images/sky.png";
-    item_sheld_Img.src="images/shield.png";
+    item_shield_Img.src="images/shield.png";
     item_money_Img.src = "images/money.png";
     item_harmless_Img.src  = "images/harmless.png";
-    sheldAmtImg.src="images/shieldAmt.png";
+    shieldAmtImg.src="images/shieldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
     fog_Img.src="images/fog.png";
 
@@ -212,6 +238,9 @@ $(function init() {
     down2_Img.src = "images/down2.png";
     left2_Img.src = "images/left2.png";
     right2_Img.src = "images/right2.png";
+
+
+
 
     $$("#game").swipeLeft(function() {
         if (g_status==1) {
@@ -292,4 +321,24 @@ $(function init() {
 //    	Audio.play();
         initGame();
     });
+
+    $("#shop").on("pageshow",function () {
+        $("#money").html(localStorage.money);
+    })
+
+    $("#shield").on("click",function () {
+        if (localStorage.shieldTime) {
+            kind=1;
+            upGradeSkill(kind);
+        };
+    });
+
+    $("#harmless").on("click",function () {
+        if (localStorage.harmlessTime) {
+            kind=2;
+            upGradeSkill(kind);
+        };
+    });
+
+
 });

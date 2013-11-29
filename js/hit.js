@@ -20,7 +20,7 @@ function check_role()
                 {
                     fallingdown.barrier.splice(nn,1);
                     hh--;
-                    check_sheld();
+                    check_shield();
                 }
                 else if(fallingdown.barrier[nn].kind == 10)
                 {
@@ -29,7 +29,7 @@ function check_role()
                     innergame();
                 }
                 //得到障碍物类型，判断是否必死型
-                //是就 check_sheld()
+                //是就 check_shield()
                 //不是就change_life()
         
             }
@@ -70,7 +70,7 @@ function check_item ()
             {
                 if(fallingdown.item[nn].type == 7) add_money();
                 if(fallingdown.item[nn].type == 8) add_harmless();
-                if(fallingdown.item[nn].type == 9) add_sheld();
+                if(fallingdown.item[nn].type == 9) add_shield();
                 fallingdown.item.splice(nn,1);
                 hh--;
             }
@@ -80,20 +80,20 @@ function check_item ()
 
 }
 
-function check_sheld()
+function check_shield()
 {
     //hit_div = document.getElementById("hit");
-    if (role.sheld == 0) 
+    if (role.shield == 0) 
     {
         dead();
     }
-    else role.sheld=0; 
+    else role.shield=0; 
 }
 
 function change_life()
 {
-    if (role.dead == 0 && role.sheld == 0) role.dead =2;
-    else if (role.dead == 2 && role.sheld == 0) role.dead =1;
+    if (role.dead == 0 && role.shield == 0) role.dead =2;
+    else if (role.dead == 2 && role.shield == 0) role.dead =1;
 }
 
 function pauseGame()
@@ -111,13 +111,13 @@ function add_money()
     fallingdown.total_money += 30;
 }
 
-function add_sheld()
+function add_shield()
 {
-    role.sheld = 1;
+    role.shield = 1;
     setTimeout(function()
                 {
-                    role.sheld = 0;
-                },10000);
+                    role.shield = 0;
+                },role.shieldTime);
 }
 
 function add_harmless()
@@ -128,7 +128,7 @@ function add_harmless()
                 {
                     fallingdown.ctrl_speed = 1;
                     role.harmless = 0;
-                },5000);
+                },role.harmlessTime);
 
 }
 
@@ -136,18 +136,26 @@ function dead()
 {
     role.dead=1;
     pauseGame();
+
+    if (localStorage.diamond) {
+        role.diamond=localStorage.diamond;
+    } else{
+        localStorage.diamond=role.diamond;
+    };
+
     if (role.diamond>0) {
-    hit_div.style.display="inline-block";
+        $("#diamond").html(role.diamond);
+        hit_div.style.display="inline-block";
     }else{
         gameOver();
     }
     //user choose to live or not
-    //gameOver();
 }
 
 function reLife () {
     role.dead = 0;
     role.diamond=role.diamond-1;
+    localStorage.diamond=role.diamond;
     hit_div.style.display="none";
     continueGame();
 }

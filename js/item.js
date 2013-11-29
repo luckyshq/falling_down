@@ -17,7 +17,7 @@ function item(type)
     this.way= 0;
     this.status=0;
     this.speed=4;
-    this.type = type; //type defines what kind of item it is .0 stands for harmless,1 stands for sheld......
+    this.type = type; //type defines what kind of item it is .0 stands for harmless,1 stands for shield......
     this.s=0;
     this.h=0;
 }
@@ -30,7 +30,7 @@ function draw_item()
     {
         if(fallingdown.item[nn].type == 9)
         {
-            ctx.drawImage(item_sheld_Img,
+            ctx.drawImage(item_shield_Img,
                             fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
                             fallingdown.item[nn].width,
@@ -83,7 +83,7 @@ function draw_item()
     }
 }
 //the atribution of effect image
-var sheldAmt={
+var shieldAmt={
     x:0,
     y:0,
     width:150,

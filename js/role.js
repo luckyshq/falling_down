@@ -9,8 +9,10 @@ var role = {
     way:1,
 
     diamond:100,          //num of diamond ,can relife
-    sheld:1,          //1 role has a sheld
+    shield:1,          //1 role has a shield
+    shieldTime:10000,
     harmless:0,       //0 role is not harmless
+    harmlessTime:5000,
     dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 
 }
 //test
@@ -65,14 +67,14 @@ function draw_role(){
     //         role.width,role.height,role.x,role.y,role.width,role.height);       
     // role.status=(role.status+1)%6;
 
-    if (role.sheld==1) {
-        ctx.drawImage(sheldAmtImg,sheldAmt.s*sheldAmt.width,
-            sheldAmt.h*sheldAmt.height,sheldAmt.width,sheldAmt.height,
+    if (role.shield==1) {
+        ctx.drawImage(shieldAmtImg,shieldAmt.s*shieldAmt.width,
+            shieldAmt.h*shieldAmt.height,shieldAmt.width,shieldAmt.height,
             role.x-25,role.y-25,role.width+80,role.height+70);
-        sheldAmt.s=sheldAmt.s+1;
-        if (sheldAmt.s==4) {
-            sheldAmt.s=0;
-            sheldAmt.h=(sheldAmt.h=sheldAmt.h+1)%3;
+        shieldAmt.s=shieldAmt.s+1;
+        if (shieldAmt.s==4) {
+            shieldAmt.s=0;
+            shieldAmt.h=(shieldAmt.h=shieldAmt.h+1)%3;
         };
     }; 
 }
