@@ -58,7 +58,7 @@ var fallingdown = {
     point  : 0 ,
     finalPoint:0,
     total_money:0,
-    b_countofarray:0
+    b_countofarray:5
 };
 
 var unit = 7;

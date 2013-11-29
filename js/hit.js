@@ -62,7 +62,7 @@ function check_item ()
 {
     var hh=fallingdown.item.length;
 
-    for(var nn = 0; nn<hh; nn++)
+    for(var nn = 0;nn<hh; nn++)
     {
         if ((fallingdown.item[nn].y <= role.y + role.height && fallingdown.item[nn].y+fallingdown.item[nn].height>role.y )) 
         {
