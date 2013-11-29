@@ -326,9 +326,16 @@ $(function init() {
     });
 
     $(".start").on("click",function() {
-//    	Animation.pause();
-//    	Audio.play();
+        $.mobile.changePage("#game");
         initGame();
+    });
+
+    $(".option").on("click",function() {
+        $.mobile.changePage("#option");
+    });
+
+    $(".shop").on("click",function() {
+        $.mobile.changePage("#shop");
     });
 
     $("#shop").on("pageshow",function () {

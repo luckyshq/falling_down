@@ -5,6 +5,42 @@
   position: absolute;
 }
 
+#startImg{
+  top: 0;
+  left: 0;
+  width: 360;
+  height: 640;
+  position: absolute;
+  background-image:url("images/startimg.png");
+}
+
+#startMan{
+  width: 80;
+  height: 95;
+  top: 80;
+  left: 200;
+  position: absolute;
+  background-image: url("images/role.png");
+}
+
+#optionImg{
+  width: 66;
+  height: 70;
+  top: 500;
+  left: 200;
+  position: absolute;
+  background-image: url("images/setting_button.png");
+}
+
+#shopImg{
+  width: 66;
+  height: 70;
+  top: 500;
+  left: 270;
+  position: absolute;
+  background-image: url("images/shop_button.png");
+}
+
 #innergame{
   opacity: 0;
 }

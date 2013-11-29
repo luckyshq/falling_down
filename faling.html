@@ -59,14 +59,18 @@ div.ui-slider-switch {
 -->
 
 
-<div data-role="page" id="welcome" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
-    <div data-role="header">
-        <h1>welcome</h1>
-    </div>
+<div data-role="page" id="welcome" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight" >
     <div data-role="content">
+    <div id="startImg">
+        <div class="start" id="startMan"></div>
+        <div class="option" id="optionImg"></div>
+        <div class="shop" id="shopImg"></div>
+    </div> 
+<!-- 
         <a class="start" href="#game" data-transition="flip" data-role="button" data-theme="b">Start</a>
         <a class="option" href="#option" data-transition="slide" data-role="button" data-theme="b">Option</a>
         <a class="shop" href="#shop" data-transition="slide" data-role="button" data-theme="b">shop</a>
+         -->
     </div>
 
 </div>
@@ -154,7 +158,7 @@ div.ui-slider-switch {
 
 <div data-role="page" id="option" >
     <div data-role="header">
-        <h1>Option</h1>
+        <h1>设置</h1>
     </div>
     <div data-role="content">   
      <!--in order to turn on the volume-->
@@ -172,15 +176,15 @@ div.ui-slider-switch {
     <div data-role="content">   
      <!--in order to turn in the volume-->
 			<ul data-role="listview" data-divider-theme="b" data-inset="true">
-				<li data-role="list-divider" role="heading">VOLUME</li>
+				<li data-role="list-divider" role="heading">音量</li>
 				<input id="volume" min="0" max="1" step="0.1" type="range" onchange="setVolume()" />
 			</ul>
     </div>    
-        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">back</a>
+        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">返回主界面</a>
         
          <div data-role="content">   
     	<div data-role="collapsible" data-state="collapsed">   
-     	<h3>info</h3>   
+     	<h3>信息</h3>   
     	  <h3>About this version：坠梦空间 V1.0</h3> 
     	  <h3>制作：XXX团队</h3> 
    		</div>   
