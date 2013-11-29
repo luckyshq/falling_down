@@ -2,6 +2,8 @@ var canvas;
 var ctx;
 var canvas_inner;
 var ctx_innergame;
+var canvas_shop=[];
+var ctx_shop=[];
 
 var img=new Image(); 
 var barrierImg=new Image();
@@ -180,20 +182,6 @@ function initGame () {
     role.dead=0;
     startTime=0;
 
-    if(localStorage.shieldTime)
-        role.shieldTime=localStorage.shieldTime;
-    else{
-        localStorage.shieldTime=10000;
-        role.shieldTime = Number(localStorage.shieldTime);
-    }
-
-    if(localStorage.harmlessTime)
-        role.harmlessTime=localStorage.harmlessTime;
-    else{
-        localStorage.harmlessTime=5000;
-        role.harmlessTime = Number(localStorage.harmlessTime);
-    }
-
     gameloop(Date.now);
 
 
@@ -209,8 +197,29 @@ $(function init() {
     ctxBg=canvas.getContext('2d');
     canvas_inner = document.getElementById("innergame");
     ctx_innergame = canvas_inner.getContext("2d");
+    canvas_shop[0]=document.getElementById("shieldBar");
+    canvas_shop[1]=document.getElementById("harmlessBar");
+    ctx_shop[0]=canvas_shop[0].getContext("2d");
+    ctx_shop[1]=canvas_shop[1].getContext("2d");
     //createBarrier();
-  
+
+    if(localStorage.shieldTime)
+        role.shieldTime=localStorage.shieldTime;
+    else{
+        localStorage.shieldTime=10000;
+        role.shieldTime = Number(localStorage.shieldTime);
+    }
+
+    if(localStorage.harmlessTime)
+        role.harmlessTime=localStorage.harmlessTime;
+    else{
+        localStorage.harmlessTime=5000;
+        role.harmlessTime = Number(localStorage.harmlessTime);
+    }
+
+    ctx_shop[0].fillStyle="#007FFF";
+    ctx_shop[1].fillStyle="#007FFF";
+
   	 Audio=document.getElementById("audio");
      Animation=document.getElementById("animation");
   
@@ -324,6 +333,19 @@ $(function init() {
 
     $("#shop").on("pageshow",function () {
         $("#money").html(localStorage.money);
+
+        var sx=(role.shieldTime-10000)/5000*60;
+        ctx_shop[0].fillRect(0,0,sx,20);
+        sx=(role.harmlessTime-5000)/2000*60;
+        ctx_shop[1].fillRect(0,0,sx,20);
+
+        ctx_shop[0].lineWidth="3";  
+        ctx_shop[0].beginPath();  
+        ctx_shop[0].strokeRect(0,0,360,20);
+
+        ctx_shop[1].lineWidth="3";  
+        ctx_shop[1].beginPath();  
+        ctx_shop[1].strokeRect(0,0,360,20);
     })
 
     $("#shield").on("click",function () {

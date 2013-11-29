@@ -72,9 +72,9 @@ div.ui-slider-switch {
 </div>
 
 <div data-role="page" id="game" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
-        <canvas id="bg" width=document.body.clientWidth height=document.body.clientHeight  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-         <canvas id="man" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-         <canvas id="innergame" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
+        <canvas class="playing" id="bg" width=document.body.clientWidth height=document.body.clientHeight  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
+         <canvas class="playing" id="man" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
+         <canvas class="playing" id="innergame" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
         
 </div>
 
@@ -133,7 +133,7 @@ div.ui-slider-switch {
 <div data-role="page" id="gameover" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
     <div id="score" >
     	<br>   
-    	<h3 style="color:#00FFFF;font-weight:900;">Your Score:<span id="finalPoint"></span></h3>   	    	     	
+    	<h3 style="color:#00FFFF;font-weight:900;">你的分数:<span id="finalPoint"></span></h3>   	    	     	
     	<h2 style="color:#00FFFF;font-weight:900;">排行榜</h2>
     	
     	<table id='ranking'>
@@ -143,8 +143,8 @@ div.ui-slider-switch {
     </div>
     
     <div data-role="content">  
-        <a class="start" href="#game" data-transition="flip" data-role="button" data-theme="b">restart</a>
-        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">MENU</a>
+        <a class="start" href="#game" data-transition="flip" data-role="button" data-theme="b">重新开始游戏</a>
+        <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">返回主菜单</a>
         <a name="xn_share" onclick="shareClick()" type="button_large" href="javascript:;"></a>
     	<div id="point">
 
@@ -194,12 +194,14 @@ div.ui-slider-switch {
 		}
 	</script>
 
-<div data-role="page" id="shop">
-    <div data-role="header"><h1>商城<h1></div>
+<div data-role="page" id="shop" data-theme="b">
+    <div data-role="header"><h4>商城</h4></div>
     <div><p>金币：<span id="money"></span></p></div>
-    <a id="shield" data-role="button" data-theme="c">shield</a>
-    <a id="harmless" data-role="button" data-theme="c">harmless</a>
-    <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">MENU</a>
+    <canvas id = "shieldBar" height="20" width="360"></canvas>
+    <a id="shield" data-role="button" data-theme="c">升级盾时间</a>
+    <canvas id = "harmlessBar" height="20" width="360"></canvas>
+    <a id="harmless" data-role="button" data-theme="c">升级无敌时间</a>
+    <a href="#welcome" data-transition="slide" data-role="button" data-theme="b">返回主界面</a>
 </div>
 
 <div id="shopInfo" data-role="dialog" >
