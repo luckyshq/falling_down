@@ -59,7 +59,7 @@ div.ui-slider-switch {
 -->
 
 
-<div data-role="page" id="welcome" style=position:absolute width=document.body.clientWidth height=document.body.clientHeight>
+<div data-role="page" id="welcome" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
     <div data-role="header">
         <h1>welcome</h1>
     </div>
@@ -71,23 +71,23 @@ div.ui-slider-switch {
 
 </div>
 
-<div data-role="page" id="game">
+<div data-role="page" id="game" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
         <canvas id="bg" width=document.body.clientWidth height=document.body.clientHeight  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-         <canvas id="man" width="360" height="640"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-         <canvas id="innergame" width="360" height="640"  style="z-index:0;position:absolute;top:50px;left:0px;"></canvas>
+         <canvas id="man" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
+         <canvas id="innergame" width="360" height="600"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
         
 </div>
 
 <div id="hit" >
-            <p style="font-size:20px;text-align:center;font-family:cursive;">要复活吗？</p>
-            <p style="font-size:20px;text-align:center;font-family:cursive;">
+            <p style="color:#00FFFF;font-size:20px;font-style:oblique;font-weight:900;text-align:center;font-family:cursive;">要复活吗？</p>
+            <p style="color:#00FFFF;font-size:20px;font-style:oblique;font-weight:900;text-align:center;font-family:cursive;">
                 钻石剩余：<span id="diamond"></span>
             </p>
             <div style="font-size:20px;font-family:serif;">
-                <input id="button1"  type="button" class="input1" value="YES" onmousedown="reLife1()">
+                <input style="color:#00FFFF" id="button1"  type="button" class="input1" value="YES" onmousedown="reLife1()">
             </div>
             <div style="font-size:20px;font-family:serif;">
-                <input id="button2" type="button" class="input2" value="NO" onmousedown="gameOver1()">
+                <input style="color:#00FFFF" id="button2" type="button" class="input2" value="NO" onmousedown="gameOver1()">
             </div>
 </div>
 
@@ -130,11 +130,11 @@ div.ui-slider-switch {
 </script>
 
 
-<div data-role="page" id="gameover">
+<div data-role="page" id="gameover" style="position:absolute width=document.body.clientWidth height=document.body.clientHeight">
     <div id="score" >
     	<br>   
-    	<h3>Your Score:<span id="finalPoint"></span></h3>   	    	     	
-    	<h2>排行榜</h2>
+    	<h3 style="color:#00FFFF;font-weight:900;">Your Score:<span id="finalPoint"></span></h3>   	    	     	
+    	<h2 style="color:#00FFFF;font-weight:900;">排行榜</h2>
     	
     	<table id='ranking'>
    <!-- 	<tr><th>排名</th>  <th>ID</th> <th>得分</th> </tr>    -->

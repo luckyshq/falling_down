@@ -21,8 +21,9 @@ canvas{
 
 #ranking{
 	width:100%;
-	text-align: center;
-	color:blue;
+	text-align: center;	
+	color:#5F9F9F;
+	font-weight:bold;
 }
 
 
