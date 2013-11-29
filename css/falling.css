@@ -1,4 +1,24 @@
 
+canvas{
+  width: 360;
+  height: 640;
+  position: absolute;
+}
+
+#innergame{
+  opacity: 0;
+}
+#innergame.cameout{
+  opacity:1;
+  -webkit-transition:opacity .5s linear;
+  transition:opacity .5s linear;
+}
+#innergame.fadeout{
+  opacity:0;
+  -webkit-transition:opacity .5s linear;
+  transition:opacity .5s linear;
+}
+
 #ranking{
 	width:100%;
 	text-align: center;
@@ -8,13 +28,14 @@
 
 
 #hit{
-	width:200px;
-	height:110px;
+	width:220px;
+	height:180px;
     background:url(dialog.png);
+    background-size:100% 100%;
     display: none;
     position: absolute;
     left: 60px;
-    top: 300px;
+    top: 260px;
 }
 
 .input1{
