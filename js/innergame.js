@@ -42,6 +42,15 @@ function drawInner(){
     }
 }
 function check_inner(){
-    if(g_status == 1)
+      if(g_status == 1)
+       if (role.diamond>0) {
+        $("#diamond").html(role.diamond);
+        hit_div.style.display="inline-block";
+        $("#innergame").removeClass('cameout');
+        $("#innergame").addClass('fadeout');
+        //g_status = 0;
+        gesture = [];
+    }else{
         gameOver();
+    }
 }
