@@ -136,6 +136,7 @@ function barrier(kind,x,y,width,height,way,speed,status){
     this.way = way;
     this.speed = speed;
     this.status = status;
+    this.h = 0;
     //this.type = type;           //0 stands for fatal barrier
 }
 
@@ -262,18 +263,21 @@ function draw_barrier () {
             fallingdown.barrier[nn].height);
        }
        if (fallingdown.barrier[nn].kind==10) {
-       ctx.drawImage(fog_Img,
-       // fallingdown.barrier[nn].status*180,
-       // 0,
-        // fallingdown.barrier[nn].width,
-        // fallingdown.barrier[nn].height,
-       // 180,
-       // 180,
-        fallingdown.barrier[nn].x,
-        fallingdown.barrier[nn].y
-       // fallingdown.barrier[nn].width,
-       // fallingdown.barrier[nn].height
-       );
+                 ctx.drawImage(fog_Img,
+                            fallingdown.barrier[nn].status*150,
+                            fallingdown.barrier[nn].h*150,
+                            150,
+                            150,
+                            fallingdown.barrier[nn].x,
+                            fallingdown.barrier[nn].y,
+                            fallingdown.barrier[nn].width,
+                            fallingdown.barrier[nn].height
+                           );
+            fallingdown.barrier[nn].status=fallingdown.barrier[nn].status+1;
+            if (fallingdown.barrier[nn].status==4) {
+                fallingdown.barrier[nn].status=0;
+                fallingdown.barrier[nn].h=(fallingdown.barrier[nn].h+1)%3;
+            };
        };
         if (fallingdown.barrier[nn].y < 0) {
             fallingdown.barrier.splice(nn,1);
