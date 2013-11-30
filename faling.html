@@ -78,12 +78,12 @@ div.ui-slider-switch {
 <div data-role="page" id="game" >
         <canvas class="playing" id="bg" width="360" height="617" style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
          <canvas class="playing" id="man" width="360" height="617"  style="z-index:0;position:absolute;top:0px;left:0px;"></canvas>
-      
+    <div id="wannaout" >
+    <input type="image" src="images/menu_button.png" onmousemove="this.src='images/menu_button.png'" onmouseout="this.src='images/menu_button.png'" onmousedown="choice()"/> 
+    </div>      
 </div>
 
-<div id="wannaout" >
-<input type="image" src="images/menu_button.png" onmousemove="this.src='images/menu_button.png'" onmouseout="this.src='images/menu_button.png'" onmousedown="choice()"/> 
-</div>
+
 
 <div id="hit" >
             <p style="color:#A0522D;font-size:20px;font-style:oblique;font-weight:900;text-align:center;font-family:cursive;">要复活吗？<br>钻石剩余：<span id="diamond"></span></p>
