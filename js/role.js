@@ -96,8 +96,7 @@ function draw_role(){
                 gesture.splice(0,1);
             }
             if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
+                innergame_div.style.display = "none";
                 g_status = 0;
             }
         }else{

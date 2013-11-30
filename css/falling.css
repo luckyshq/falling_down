@@ -60,22 +60,8 @@
   background-image: url("images/shop_button.png");
 }
 
-#innergame{
-  opacity: 0;
-}
-#innergame.cameout{
-  opacity:1;
-  -webkit-transition:opacity .5s linear;
-  -moz-transition:opacity .5s linear;
-  transition:opacity .5s linear;
-  -o-transition:opacity .5s linear;
-}
-#innergame.fadeout{
-  opacity:0;
-  -webkit-transition:opacity .5s linear;
-  -moz-transition:opacity .5s linear;
-  transition:opacity .5s linear;
-  -o-transition:opacity .5s linear;
+#innergame_div{
+   display: none;
 }
 
 #ranking{
