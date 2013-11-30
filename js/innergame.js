@@ -29,13 +29,13 @@ function drawInner(){
     var len = gesture.length;
     for(var i = 0; i<len; i++){
        if(gesture[i] == 37)
-            ctx_innergame.drawImage(arrow_Img,65,0,65,68,20+i*90,20,50,50);
+            ctx_innergame.drawImage(arrow_Img,65,0,65,68,20+i*90,58,50,50);
         else if(gesture[i] == 38)
-            ctx_innergame.drawImage(arrow_Img,0,0,65,68,20+i*90,20,50,50);
+            ctx_innergame.drawImage(arrow_Img,0,0,65,68,20+i*90,58,50,50);
         else if(gesture[i] == 39)
-            ctx_innergame.drawImage(arrow_Img,195,0,65,68,20+i*90,20,50,50);
+            ctx_innergame.drawImage(arrow_Img,195,0,65,68,20+i*90,58,50,50);
         else 
-            ctx_innergame.drawImage(arrow_Img,130,0,65,68,20+i*90,20,50,50);
+            ctx_innergame.drawImage(arrow_Img,130,0,65,68,20+i*90,58,50,50);
     }
 }
 function check_inner(){

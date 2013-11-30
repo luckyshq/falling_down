@@ -109,13 +109,13 @@ function draw_role(){
             if(e.which == gesture[0]){
                
                        if(gesture[0] == 37)
-                           ctx_innergame.drawImage(arrow_Img,65,68,65,68,20+i*90,22,50,50);
+                           ctx_innergame.drawImage(arrow_Img,65,68,65,68,20+i*90,60,50,50);
                        else if(gesture[0] == 38)
-                           ctx_innergame.drawImage(arrow_Img,0,68,65,68,20+i*90,22,50,50);
+                           ctx_innergame.drawImage(arrow_Img,0,68,65,68,20+i*90,60,50,50);
                        else if(gesture[0] == 39)
-                           ctx_innergame.drawImage(arrow_Img,195,68,65,68,20+i*90,22,50,50);
+                           ctx_innergame.drawImage(arrow_Img,195,68,65,68,20+i*90,60,50,50);
                        else 
-                          ctx_innergame.drawImage(arrow_Img,130,68,65,68,20+i*90,22,50,50);
+                          ctx_innergame.drawImage(arrow_Img,130,68,65,68,20+i*90,60,50,50);
                
                 gesture.splice(0,1);
             }
