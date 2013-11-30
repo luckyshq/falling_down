@@ -172,6 +172,7 @@ function reLife () {
     role.diamond=role.diamond-1;
     localStorage.diamond=role.diamond;
     hit_div.style.display="none";
+    gesture = [];
     g_status = 0;
     continueGame();
 }
