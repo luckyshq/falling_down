@@ -82,6 +82,10 @@ div.ui-slider-switch {
         
 </div>
 
+<div id="wannaout" >
+<input type="image" src="images/menu_button.png" onmousemove="this.src='images/menu_button.png'" onmouseout="this.src='images/menu_button.png'" onmousedown="choice()"/> 
+</div>
+
 <div id="hit" >
             <p style="color:#A0522D;font-size:20px;font-style:oblique;font-weight:900;text-align:center;font-family:cursive;">要复活吗？<br>钻石剩余：<span id="diamond"></span></p>
 
@@ -93,6 +97,16 @@ div.ui-slider-switch {
             </div>
 </div>
 
+<div id="pause" >
+            <p style="color:#A0522D;font-size:20px;font-style:oblique;font-weight:900;text-align:center;font-family:cursive;">*^_^*点我干嘛</p>
+
+            <div style="font-size:20px;font-family:serif;">
+                <input style="color:#A0522D;font-weight:900;" id="button3"  type="button" class="input1" value="回到游戏" onmousedown="backtogame()">
+            </div>
+            <div style="font-size:20px;font-family:serif;">
+                <input style="color:#A0522D;font-weight:900;" id="button4" type="button" class="input2" value="我退了你" onmousedown="gameOver2()">
+            </div>
+</div>
 <script>
     function reLife1(){
     	var button1=document.getElementById("button1");
@@ -128,6 +142,32 @@ div.ui-slider-switch {
     	};
     }
     
+    function gameOver2(){
+        var button2=document.getElementById("button4");
+        button4.style.backgroundPosition="68px 50px";
+        
+        button4.onmouseup=
+        function ()
+        {
+            button4.style.backgroundPosition="0px 0px";
+            pause.style.display="none";
+            wannaout.style.display="none";
+            gameOver();
+        };
+        button4.onmouseout=
+        function ()
+        {
+            button4.style.backgroundPosition="0px 0px";
+        };
+    }
+    function choice(){
+        pause.style.display="inline-block";
+        g_status = 2;
+    }
+    function backtogame(){
+        g_status = 0;
+        pause.style.display="none";
+    }
     
 </script>
 

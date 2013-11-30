@@ -327,6 +327,7 @@ $(function init() {
     });
 
     $(".start").on("click",function() {
+        wannaout.style.display="inline-block";
         $.mobile.changePage("#game");
         initGame();
     });
