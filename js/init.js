@@ -128,6 +128,9 @@ function gameOver(){
     fallingdown.finalPoint = fallingdown.point;
     Storage_Point(fallingdown.finalPoint);
     Storage_Money(fallingdown.total_money);
+    
+    Audio=document.getElementById("audio");  
+    Audio.pause();
 
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
@@ -324,6 +327,9 @@ $(function init() {
     });
 
     $(".start").on("click",function() {
+    	Audio=document.getElementById("audio");  
+    	Audio.play();
+    	
         wannaout.style.display="inline-block";
         $.mobile.changePage("#game");
         initGame();
