@@ -10,7 +10,7 @@ var role = {
 
     diamond:100,          //num of diamond ,can relife
     shield:1,          //1 role has a shield
-    shieldTime:10000,
+    shieldTime:5000,
     harmless:0,       //0 role is not harmless
     harmlessTime:5000,
     dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 

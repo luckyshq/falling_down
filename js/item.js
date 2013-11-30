@@ -8,9 +8,9 @@
 //     speed:10
 // }
 
-function item(type)
+function item(x_position,type)
 {
-    this.x=15 ;
+    this.x=15 + 120 * x_position;
     this.y=640;
     this.width=53;
     this.height=53;
@@ -66,7 +66,7 @@ function draw_item()
         if(fallingdown.item[nn].type ==7)
         {
             ctx.drawImage(item_money_Img,
-                            fallingdown.item[nn].x,
+                            fallingdown.item[nn].x + 15,
                             fallingdown.item[nn].y,
                             fallingdown.item[nn].width,
                             fallingdown.item[nn].height

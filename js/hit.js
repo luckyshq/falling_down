@@ -20,13 +20,13 @@ function check_role()
                 {
                     fallingdown.barrier.splice(nn,1);
                     hh--;
-                    check_shield();
+                    if(check_shield() == 0) dead();
                 }
                 else if(fallingdown.barrier[nn].kind == 10)
                 {
                     fallingdown.barrier.splice(nn,1);
                     hh--;
-                    innergame();
+                    if(check_shield() == 0) innergame();
                 }
                 //得到障碍物类型，判断是否必死型
                 //是就 check_shield()
@@ -82,12 +82,12 @@ function check_item ()
 
 function check_shield()
 {
-    //hit_div = document.getElementById("hit");
-    if (role.shield == 0) 
+    if (role.shield == 0) return 0;
+    else
     {
-        dead();
-    }
-    else role.shield=0; 
+        role.shield = 0;
+        return 1;
+    } 
 }
 
 function change_life()

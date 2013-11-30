@@ -4,9 +4,9 @@ function shareClick()
     // ss.style.display="none";
     var resourceUrl="";
     var pic="";
-    var title="";
-    var description="";
-    var message="";
+    var title="我在玩#坠梦空间#，好激动呀~";
+    var description="最奇幻的旅程，就在坠梦空间~";
+    var message="太好玩了，小伙伴们，我玩坠梦空间得了"+fallingdown.finalPoint+"分，你也来试试吧~";
     var rrShareParam = {
             resourceUrl : resourceUrl,  /*分享的资源Url*/
             pic : pic,      /*分享的主题图片Url*/

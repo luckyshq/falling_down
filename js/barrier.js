@@ -196,17 +196,17 @@ function createBarrier(){
 
         }else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 7)
         {
-            fallingdown.item.push(new item(7));
+            fallingdown.item.push(new item(i,7));
 
         }
         else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 8)  
         {
-            fallingdown.item.push(new item(8));
+            fallingdown.item.push(new item(i,8));
 
         }
         else if(barrierArray[fallingdown.b_countofarray][fallingdown.b_count][0] == 9)  //a shield is created
         {
-            fallingdown.item.push(new item(9));
+            fallingdown.item.push(new item(i,9));
 
         }
     }
