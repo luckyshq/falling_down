@@ -10,6 +10,7 @@ var barrierImg=new Image();
 var bgImage=new Image();
 var item_shield_Img = new Image();
 var item_money_Img = new Image();
+var item_diamond_Img = new Image();
 var item_harmless_Img = new Image();
 var shieldAmtImg = new Image();
 var barrierDraImg = new Image();
@@ -63,6 +64,7 @@ var fallingdown = {
     point  : 0 ,
     finalPoint:0,
     total_money:0,
+    total_diamond:0,
     b_countofarray:1
 };
 
@@ -114,6 +116,14 @@ function Storage_Money (money) {
         localStorage.money=Number(localStorage.money)+money;
     }else{
         localStorage.money=money;
+    }
+}
+
+function Storage_Diamond () {
+    if (localStorage.diamond) {
+        localStorage.diamond=Number(localStorage.diamond)+1;
+    }else{
+        localStorage.diamond=1;
     }
 }
 
@@ -199,8 +209,9 @@ $(function init() {
     ctx=canvas.getContext('2d');
     canvasBg=document.getElementById("bg");  
     ctxBg=canvas.getContext('2d');
-    canvas_inner = document.getElementById("innergame");
-    ctx_innergame = canvas_inner.getContext("2d");
+    //canvas_inner = document.getElementById("innergame");
+    ctx_innergame = ctx;
+    //canvas_inner.getContext("2d");
     canvas_shop[0]=document.getElementById("shieldBar");
     canvas_shop[1]=document.getElementById("harmlessBar");
     ctx_shop[0]=canvas_shop[0].getContext("2d");
@@ -237,6 +248,7 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_shield_Img.src="images/shield.png";
     item_money_Img.src = "images/money.png";
+    item_diamond_Img.src = "images/diamond.png";
     item_harmless_Img.src  = "images/harmless.png";
     shieldAmtImg.src="images/shieldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";

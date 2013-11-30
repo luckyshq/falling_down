@@ -72,6 +72,16 @@ function draw_item()
                             fallingdown.item[nn].height
                            );
         }
+
+        if(fallingdown.item[nn].type ==6)
+        {
+            ctx.drawImage(item_diamond_Img,
+                            fallingdown.item[nn].x + 15,
+                            fallingdown.item[nn].y,
+                            fallingdown.item[nn].width,
+                            fallingdown.item[nn].height
+                           );
+        }
         //fallingdown.item[nn].status=(fallingdown.item[nn].status+1)%9;
 
         fallingdown.item[nn].y = fallingdown.item[nn].y - fallingdown.item[nn].speed * fallingdown.ctrl_speed;

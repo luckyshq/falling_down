@@ -9,7 +9,7 @@ var role = {
     way:1,
 
     diamond:100,          //num of diamond ,can relife
-    shield:1,          //1 role has a shield
+    shield:0,          //1 role has a shield
     shieldTime:5000,
     s_fade:0,
     harmless:0,       //0 role is not harmless
@@ -120,9 +120,7 @@ function draw_role(){
                 gesture.splice(0,1);
             }
             if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
-                g_status = 0;
+                  g_status = 0;
             }
         }else{
         switch(e.which){

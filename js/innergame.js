@@ -1,10 +1,7 @@
 
 function innergame(){
-    if($("#innergame").hasClass('fadeout'))
-        $("#innergame").removeClass('fadeout');
-    $("#innergame").addClass('cameout');
-    
-    var number = parseInt(4*Math.random());
+  
+        var number = parseInt(4*Math.random());
     
     for(var ii = 0; ii < 4; ii++){
     if(number == 0){
@@ -46,8 +43,7 @@ function check_inner(){
        if (role.diamond>0) {
         $("#diamond").html(role.diamond);
         hit_div.style.display="inline-block";
-        $("#innergame").removeClass('cameout');
-        $("#innergame").addClass('fadeout');
+       
         //g_status = 0;
         gesture = [];
     }else{
