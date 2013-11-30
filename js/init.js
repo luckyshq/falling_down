@@ -121,6 +121,7 @@ function gameOver(){
     fallingdown.finalPoint = fallingdown.point;
     Storage_Point(fallingdown.finalPoint);
     Storage_Money(fallingdown.total_money);
+
     fallingdown.point = 0;
     fallingdown.barrier.splice(0,fallingdown.barrier.length) ;
     fallingdown.point = 0;

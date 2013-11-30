@@ -66,7 +66,7 @@ function draw_item()
         if(fallingdown.item[nn].type ==7)
         {
             ctx.drawImage(item_money_Img,
-                            fallingdown.item[nn].x,
+                            fallingdown.item[nn].x + 15,
                             fallingdown.item[nn].y,
                             fallingdown.item[nn].width,
                             fallingdown.item[nn].height
