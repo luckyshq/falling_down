@@ -66,12 +66,16 @@
 #innergame.cameout{
   opacity:1;
   -webkit-transition:opacity .5s linear;
+  -moz-transition:opacity .5s linear;
   transition:opacity .5s linear;
+  -o-transition:opacity .5s linear;
 }
 #innergame.fadeout{
   opacity:0;
   -webkit-transition:opacity .5s linear;
+  -moz-transition:opacity .5s linear;
   transition:opacity .5s linear;
+  -o-transition:opacity .5s linear;
 }
 
 #ranking{
