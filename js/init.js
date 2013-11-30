@@ -71,18 +71,18 @@ var fallingdown = {
 var unit = 7;
 
 function draw_text () {
-    ctx.font = "26px Arial";
+    ctx.font = "20px cursive";
     ctx.textAlign = "left";
-    ctx.fillStyle = "#FF0000";
-    ctx.fillText("Point:"+fallingdown.point,20,30);
+    ctx.fillStyle = "#FFFF00";
+    ctx.fillText("Point:"+fallingdown.point,50,25);
 }
 
 function draw_money()
 {
-    ctx.font = "26px Arial";
-    ctx.textAlign = "right";
-    ctx.fillStyle = "#FF0000";
-    ctx.fillText("Money:"+fallingdown.total_money,350,30);
+    ctx.font = "20px cursive";
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#FFFF00";
+    ctx.fillText("Money:"+fallingdown.total_money,50,45);
 }
 
 function Storage_Point(point)
