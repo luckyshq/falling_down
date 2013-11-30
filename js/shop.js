@@ -15,7 +15,7 @@ function upGradeSkill (kind) {
 		}else if(localStorage.shieldTime==40000){
 				$("#s_info").html("你已经满级了哦");
 			}else{
-				$("#s_info").html("您的金币不足");
+				$("#s_info").html("您的金币不足哦");
 			}
 	};
 	if (kind==2) {

@@ -8,9 +8,9 @@
 //     speed:10
 // }
 
-function item(type)
+function item(x_position,type)
 {
-    this.x=15 ;
+    this.x=15 + 120 * x_position;
     this.y=640;
     this.width=53;
     this.height=53;
