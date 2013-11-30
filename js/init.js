@@ -353,7 +353,11 @@ $(function init() {
         ctx_shop[1].lineWidth="3";  
         ctx_shop[1].beginPath();  
         ctx_shop[1].strokeRect(0,0,360,20);
-    })
+    });
+
+    $("#shop").on("pagehide",function () {
+        $("#s_info").html("");
+    });
 
     $("#shield").on("click",function () {
         if (localStorage.shieldTime) {

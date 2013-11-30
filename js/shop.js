@@ -36,5 +36,5 @@ function upGradeSkill (kind) {
 				$("#s_info").html("您的金币不足");
 			}	
 	};
-	$.mobile.changePage($("#shopInfo"));
+	// $.mobile.changePage($("#shopInfo"));
 }

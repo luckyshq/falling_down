@@ -1,7 +1,7 @@
 var bgy=0;
 
 function draw_bg () {
-	ctx.clearRect(box.x,box.y,box.width,box.height);   
+	// ctx.clearRect(box.x,box.y,box.width,box.height);   
 
 	ctxBg.drawImage(bgImage,0,-bgy,360,640+bgy,
 		0,0,360,640+bgy);

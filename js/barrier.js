@@ -241,7 +241,7 @@ function draw_barrier () {
             fallingdown.barrier[nn].x = fallingdown.barrier[nn].x - 2;          
             ctx.drawImage(barrierDraImg,
             fallingdown.barrier[nn].status*70,
-            154,
+            77,
             70,
             77,
             fallingdown.barrier[nn].x,
@@ -254,7 +254,7 @@ function draw_barrier () {
             fallingdown.barrier[nn].x = fallingdown.barrier[nn].x + 2;
             ctx.drawImage(barrierDraImg,
             fallingdown.barrier[nn].status*70,
-            77,
+            0,
             70,
             77,
             fallingdown.barrier[nn].x,
@@ -264,10 +264,10 @@ function draw_barrier () {
        }
        if (fallingdown.barrier[nn].kind==10) {
                  ctx.drawImage(fog_Img,
-                            fallingdown.barrier[nn].status*150,
-                            fallingdown.barrier[nn].h*150,
-                            150,
-                            150,
+                            fallingdown.barrier[nn].status*70,
+                            fallingdown.barrier[nn].h*70,
+                            70,
+                            70,
                             fallingdown.barrier[nn].x,
                             fallingdown.barrier[nn].y,
                             fallingdown.barrier[nn].width,

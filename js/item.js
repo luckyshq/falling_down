@@ -24,17 +24,26 @@ function item(type)
 
 function draw_item() 
 {
-    ctx.fillStyle = "#007FFF";
+    // ctx.fillStyle = "#007FFF";
     var nn = 0; 
     while(nn<fallingdown.item.length)
     {
         if(fallingdown.item[nn].type == 9)
         {
             ctx.drawImage(item_shield_Img,
+                            fallingdown.item[nn].s*70,
+                            fallingdown.item[nn].h*70,
+                            70,
+                            70,
                             fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
-                            fallingdown.item[nn].width,
-                            fallingdown.item[nn].height);
+                            fallingdown.item[nn].width+60,
+                            fallingdown.item[nn].height+60);
+            fallingdown.item[nn].s=fallingdown.item[nn].s+1;
+            if (fallingdown.item[nn].s==4) {
+                fallingdown.item[nn].s=0;
+                fallingdown.item[nn].h=(fallingdown.item[nn].h+1)%3;
+            };
         }
         if(fallingdown.item[nn].type ==8)
         {
@@ -57,20 +66,11 @@ function draw_item()
         if(fallingdown.item[nn].type ==7)
         {
             ctx.drawImage(item_money_Img,
-                            fallingdown.item[nn].s*70,
-                            fallingdown.item[nn].h*70,
-                            70,
-                            70,
                             fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
-                            fallingdown.item[nn].width+40,
-                            fallingdown.item[nn].height+40
+                            fallingdown.item[nn].width,
+                            fallingdown.item[nn].height
                            );
-            fallingdown.item[nn].s=fallingdown.item[nn].s+1;
-            if (fallingdown.item[nn].s==4) {
-                fallingdown.item[nn].s=0;
-                fallingdown.item[nn].h=(fallingdown.item[nn].h+1)%3;
-            };
         }
         //fallingdown.item[nn].status=(fallingdown.item[nn].status+1)%9;
 
