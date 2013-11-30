@@ -118,6 +118,10 @@ function add_shield()
                 {
                     role.shield = 0;
                 },role.shieldTime);
+    setTimeout(function()
+                {
+                    role.s_fade=1;
+                },role.shieldTime-2000);
 }
 
 function add_harmless()
@@ -129,6 +133,10 @@ function add_harmless()
                     fallingdown.ctrl_speed = 1;
                     role.harmless = 0;
                 },role.harmlessTime);
+    setTimeout(function()
+                {
+                    role.h_fade=1;
+                },role.harmlessTime-2000);
 
 }
 

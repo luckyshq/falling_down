@@ -11,8 +11,10 @@ var role = {
     diamond:100,          //num of diamond ,can relife
     shield:1,          //1 role has a shield
     shieldTime:5000,
+    s_fade:0,
     harmless:0,       //0 role is not harmless
     harmlessTime:5000,
+    h_fade:0,
     dead:0            //0 stands for not dead , 1 stands for dead ,2 stands for danger 
 }
 //test
@@ -76,7 +78,29 @@ function draw_role(){
             shieldAmt.s=0;
             shieldAmt.h=(shieldAmt.h=shieldAmt.h+1)%3;
         };
+
+        if (role.status==5&&role.s_fade==1) {
+
+        } else{
+            ctx.drawImage(shieldIcon,
+            0,0,53,53,
+            270,0,40,40
+            );
+        };
+        
     }; 
+
+    if (role.harmless==1) {
+        if (role.status==5&&role.h_fade==1) {
+
+        } else{
+            ctx.drawImage(harmlessIcon,
+            0,0,53,53,
+            310,0,40,40
+            );
+        };
+        
+    };
 }
 
  $(document).keydown(function(e){

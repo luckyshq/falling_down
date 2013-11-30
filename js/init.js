@@ -24,6 +24,9 @@ var down2_Img = new Image();
 var left2_Img = new Image();
 var right2_Img = new Image();
 var fog_Img = new Image();
+var shieldIcon = new Image();
+var harmlessIcon = new Image();
+
 var hAnimation;
 var startTime;
 var Audio;
@@ -238,6 +241,8 @@ $(function init() {
     shieldAmtImg.src="images/shieldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
     fog_Img.src="images/fog.png";
+    shieldIcon.src="images/shield_icon.png";
+    harmlessIcon.src="images/harmless_icon.png";
 
     up_Img.src = "images/up.png";
     down_Img.src = "images/down.png";
