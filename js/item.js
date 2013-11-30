@@ -73,14 +73,22 @@ function draw_item()
                            );
         }
 
-        if(fallingdown.item[nn].type ==6)
+        if(fallingdown.item[nn].type == 6)
         {
             ctx.drawImage(item_diamond_Img,
-                            fallingdown.item[nn].x + 15,
+                            fallingdown.item[nn].s*70,
+                            fallingdown.item[nn].h*70,
+                            70,
+                            70,
+                            fallingdown.item[nn].x,
                             fallingdown.item[nn].y,
-                            fallingdown.item[nn].width,
-                            fallingdown.item[nn].height
-                           );
+                            fallingdown.item[nn].width+60,
+                            fallingdown.item[nn].height+60);
+            fallingdown.item[nn].s=fallingdown.item[nn].s+1;
+            if (fallingdown.item[nn].s==4) {
+                fallingdown.item[nn].s=0;
+                fallingdown.item[nn].h=(fallingdown.item[nn].h+1)%3;
+            };
         }
         //fallingdown.item[nn].status=(fallingdown.item[nn].status+1)%9;
 
