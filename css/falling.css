@@ -1,7 +1,7 @@
 
 .playing{
   width: 360;
-  height: 640;
+  height: 617;
   position: absolute;
 }
 
@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 360;
-  height: 640;
+  height: 617;
   position: absolute;
   background-image:url("images/startimg.png");
 }
@@ -106,7 +106,7 @@
 	text-align:center;
 	tex
 	width:300px;
-	height:500px;
+	height:450px;
     background:url(dialog.png);
     background-size:100% 100%;
 }
