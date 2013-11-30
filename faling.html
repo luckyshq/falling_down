@@ -237,6 +237,24 @@ div.ui-slider-switch {
  		  var volume = document.getElementById("volume");
   		 audio.volume = volume.value;
 		}
+		
+		$( "#sound-slider" ).bind( "change", function(event, ui) {
+        var slide = $(this).val();
+        if(slide == "on"){
+        	opensound();
+        }else{
+        	closesound();
+        }
+    });
+    
+    	function opensound(){
+    		Audio=document.getElementById("audio");  
+   			 Audio.play();
+    	};
+    	function closesound(){
+    		Audio=document.getElementById("audio");  
+   			 Audio.pause();
+    	};
 	</script>
 
 <div data-role="page" id="shop" >
