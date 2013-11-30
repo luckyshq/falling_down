@@ -16,17 +16,11 @@ var shieldAmtImg = new Image();
 var barrierDraImg = new Image();
 var leftRoleImg = new Image();
 var rightRoleImg = new Image();
-var up_Img = new Image();
-var down_Img = new Image();
-var left_Img = new Image();
-var right_Img = new Image();
-var up2_Img = new Image();
-var down2_Img = new Image();
-var left2_Img = new Image();
-var right2_Img = new Image();
+
 var fog_Img = new Image();
 var shieldIcon = new Image();
 var harmlessIcon = new Image();
+var arrow_Img = new Image();
 
 var hAnimation;
 var startTime;
@@ -255,16 +249,7 @@ $(function init() {
     fog_Img.src="images/fog.png";
     shieldIcon.src="images/shield_icon.png";
     harmlessIcon.src="images/harmless_icon.png";
-
-    up_Img.src = "images/up.png";
-    down_Img.src = "images/down.png";
-    left_Img.src = "images/left.png";
-    right_Img.src = "images/right.png";
-    
-    up2_Img.src = "images/up2.png";
-    down2_Img.src = "images/down2.png";
-    left2_Img.src = "images/left2.png";
-    right2_Img.src = "images/right2.png";
+    arrow_Img.src="images/arrow_03.png";   
 
 
 
@@ -277,9 +262,7 @@ $(function init() {
                 gesture.splice(0,1);
             }
             if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
-                g_status = 0;
+                         g_status = 0;
             }           
         }
         else{
@@ -300,8 +283,7 @@ $(function init() {
             };
         
             if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
+               
                 g_status = 0;
             }
         };
@@ -315,8 +297,7 @@ $(function init() {
                 gesture.splice(0,1);
             }
             if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
+               
                 g_status = 0;
             }
         } else{
@@ -336,8 +317,7 @@ $(function init() {
                 gesture.splice(0,1);
             };
         if(gesture.length == 0){
-                $("#innergame").removeClass('cameout');
-                $("#innergame").addClass('fadeout');
+                
                 g_status = 0;
             }
         };
