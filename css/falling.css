@@ -114,3 +114,27 @@
 #animation{
 	
 }
+
+#shieldicon{
+  width: 53;
+  height: 53;
+  background-image: url("images/shield_icon.png");
+}
+
+#harmlessicon{
+  width: 53;
+  height: 53;
+  background-image: url("images/harmless_icon.png");
+}
+
+#shieldBar{
+  top: 0;
+  left: 54;
+  position: relative;
+}
+
+#harmlessBar{
+  top: 0;
+  left: 54;
+  position: relative;
+}

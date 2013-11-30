@@ -341,18 +341,18 @@ $(function init() {
     $("#shop").on("pageshow",function () {
         $("#money").html(localStorage.money);
 
-        var sx=(role.shieldTime-10000)/5000*60;
-        ctx_shop[0].fillRect(0,0,sx,20);
-        sx=(role.harmlessTime-5000)/2000*60;
-        ctx_shop[1].fillRect(0,0,sx,20);
+        var sx=(role.shieldTime-10000)/5000*50;
+        ctx_shop[0].fillRect(0,0,sx,53);
+        sx=(role.harmlessTime-5000)/2000*50;
+        ctx_shop[1].fillRect(0,0,sx,53);
 
         ctx_shop[0].lineWidth="3";  
         ctx_shop[0].beginPath();  
-        ctx_shop[0].strokeRect(0,0,360,20);
+        ctx_shop[0].strokeRect(0,0,300,53);
 
         ctx_shop[1].lineWidth="3";  
         ctx_shop[1].beginPath();  
-        ctx_shop[1].strokeRect(0,0,360,20);
+        ctx_shop[1].strokeRect(0,0,300,53);
     });
 
     $("#shop").on("pagehide",function () {
