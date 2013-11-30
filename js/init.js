@@ -196,8 +196,9 @@ $(function init() {
     ctx=canvas.getContext('2d');
     canvasBg=document.getElementById("bg");  
     ctxBg=canvas.getContext('2d');
-    canvas_inner = document.getElementById("innergame");
-    ctx_innergame = canvas_inner.getContext("2d");
+    //canvas_inner = document.getElementById("innergame");
+    ctx_innergame = ctx;
+    //canvas_inner.getContext("2d");
     canvas_shop[0]=document.getElementById("shieldBar");
     canvas_shop[1]=document.getElementById("harmlessBar");
     ctx_shop[0]=canvas_shop[0].getContext("2d");

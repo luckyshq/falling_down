@@ -1,6 +1,6 @@
 
 function innergame(){
-    innergame_div.style.display = "inline-block";
+  
         var number = parseInt(4*Math.random());
     
     for(var ii = 0; ii < 4; ii++){
