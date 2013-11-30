@@ -248,7 +248,7 @@ $(function init() {
     bgImage.src="images/sky.png";
     item_shield_Img.src="images/shield.png";
     item_money_Img.src = "images/money.png";
-    item_diamond_Img.src = "images/diamond.png";
+    item_diamond_Img.src = "images/diamond_shining.png";
     item_harmless_Img.src  = "images/harmless.png";
     shieldAmtImg.src="images/shieldAmt.png";
     barrierDraImg.src="images/barrier_dragon.png";
