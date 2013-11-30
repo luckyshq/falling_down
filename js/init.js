@@ -59,7 +59,7 @@ var fallingdown = {
     finalPoint:0,
     total_money:0,
     total_diamond:0,
-    b_countofarray:1
+    b_countofarray:0
 };
 
 var unit = 7;
