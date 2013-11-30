@@ -126,20 +126,22 @@ div.ui-slider-switch {
     }
     
     function gameOver1(){
-    	var button2=document.getElementById("button2");
-    	button2.style.backgroundPosition="68px 50px";
-    	
-    	button2.onmouseup=
-    	function ()
-    	{
-    		button2.style.backgroundPosition="0px 0px";
-    		gameOver();
-    	};
-     	button2.onmouseout=
-    	function ()
-    	{
-    		button2.style.backgroundPosition="0px 0px";
-    	};
+        var button2=document.getElementById("button2");
+        button2.style.backgroundPosition="68px 50px";
+        
+        button2.onmouseup=
+        function ()
+        {
+            button2.style.backgroundPosition="0px 0px";
+              pause.style.display="none";
+            wannaout.style.display="none";
+            gameOver();
+        };
+        button2.onmouseout=
+        function ()
+        {
+            button2.style.backgroundPosition="0px 0px";
+        };
     }
     
     function gameOver2(){
