@@ -4,6 +4,10 @@
     "version_code": "1",
     "type": "web",
     "package": "com.yunos.cloudapp.failingdown12",
+     "icons": {
+        "48": "/images/logo.png",
+        "96": "/images/logo.png"
+    },
     "minimum_runtime_version": "0.1.0",
     "description": "demo",
     "developer": {
